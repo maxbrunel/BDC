@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.1 (28215) - http://www.bohemiancoding.com/sketch -->
+    <title>Messenger</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BDC-2.2" transform="translate(-502.000000, -625.000000)" fill="#0084FF">
+            <g id="Group-2" transform="translate(195.000000, 225.000000)">
+                <g id="Share" transform="translate(58.000000, 400.000000)">
+                    <g id="Messenger" transform="translate(188.000000, 0.000000)">
+                        <g transform="translate(61.000000, 0.000000)" id="Facebook_Messenger">
+                            <g>
+                                <g id="Facebook_Messenger_1_">
+                                    <path d="M12.4228395,0 C5.56188272,0 0,5.18186728 0,11.5740741 C0,15.2164352 1.80648148,18.4653549 4.62962963,20.5869599 L4.62962963,25 L8.85949074,22.6641204 C9.98834877,22.9784722 11.1842593,23.1481481 12.4228395,23.1481481 C19.2837963,23.1481481 24.845679,17.9662809 24.845679,11.5740741 C24.845679,5.18186728 19.2837963,0 12.4228395,0 L12.4228395,0 Z M13.6574074,15.5864198 L10.4938272,12.191358 L4.32098765,15.5864198 L11.1111111,8.33333333 L14.3518519,11.7283951 L20.4475309,8.33333333 L13.6574074,15.5864198 L13.6574074,15.5864198 Z" id="Shape"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

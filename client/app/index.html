@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="bdc">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bordeaux Designers Club</title>
+    <meta name="description" content="Rejoins la première communauté de designers bordelais. Que tu sois Product Designer, UX Designer, DA, étudiant ou même stagiaire, vient partager ta passion et tes expériences avec nous.">
+    <link rel="author" href="mailto:contact@bordeauxdesigners.club" xml:lang="fr-FR" title="Bordeaux Designers Club">
+    <link rel="shortcut icon" href="./img/favicon.png">
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/bower_components/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" href="/app/main.css">
+
+    <!-- BOWER -->
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/angular-lazy-image/dist/lazy-image.min.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- SOCIAL -->
+
+    <link rel="mask-icon" href="/assets/img/square.svg" color="#0F34D2">
+    <link rel="apple-touch-icon" href="/assets/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@MaxBrunel">
+    <meta name="twitter:title" content="Bordeaux Designers Club">
+    <meta name="twitter:description" content="Rejoins la première communauté de designers bordelais. Que tu sois Product Designer, UX Designer, DA, étudiant ou même stagiaire, vient partager ta passion et tes expériences avec nous.">
+    <meta name="twitter:image" content="http://bordeauxdesigners.club/img/og-image.png">
+    <meta property="og:url" content="http://bordeauxdesigners.club">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bordeaux Designers Club">
+    <meta property="og:description" content="Rejoins la première communauté de designers bordelais. Que tu sois Product Designer, UX Designer, DA, étudiant ou même stagiaire, vient partager ta passion et tes expériences avec nous.">
+    <meta property="og:image" content="http://bordeauxdesigners.club/img/og-image.png">
+    
+    <!-- SCRIPTS -->
+    <script src="//twemoji.maxcdn.com/2/twemoji.min.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/application.config.js"></script>
+    <script src="/app/application.controller.js"></script>
+    <base href="/">
+</head>
+<body>
+<div ui-view></div>
+<script>
+
+$(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+     //>=, not <=
+    if (scroll >= 10) {
+        //clearHeader, not clearheader - caps H
+        $("nav").addClass("mobile-shadow");
+    }
+    else{
+        $("nav").removeClass("mobile-shadow");   
+    }
+}); //missing );
+</script>
+</body>
+</html>

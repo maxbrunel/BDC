@@ -1,0 +1,46 @@
+.ba-btn {
+  border-radius: 100px;
+  outline: none;
+  text-shadow: none;
+  padding: 8px 20px;
+}
+
+.ba-btn:focus {
+  outline : none;
+}
+
+.ba-btn.btn-primary{
+  background: none;
+  border-color: #71C3B7;
+  background-color: #71C3B7;
+  color: white;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  -webkit-transition: all ease-in-out .2s;
+  -moz-transition: all ease-in-out .2s;
+  -ms-transition: all ease-in-out .2s;
+  -o-transition: all ease-in-out .2s;
+  transition: all ease-in-out .2s;
+}
+
+.ba-btn.btn-primary:hover{
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -o-transform: scale(1.03);
+  transform: scale(1.03);
+  -webkit-box-shadow: 0 10px 20px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 10px 20px rgba(0,0,0,.1);
+  -ms-box-shadow: 0 10px 20px rgba(0,0,0,.1);
+  -o-box-shadow: 0 10px 20px rgba(0,0,0,.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,.1);
+}
+
+.ba-btn.btn-primary:active{
+  border-color: #71C3B7;
+  background-color: #71C3B7;
+  color: white;
+}

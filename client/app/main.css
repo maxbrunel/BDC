@@ -1,0 +1,160 @@
+@import "css/button.css";
+@import "header-footer/header-footer.css";
+@import "home/home.css";
+@import "deals/deals.css";
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('/assets/fonts/apercu_regular_pro.otf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('/assets/fonts/apercu_regular_italic_pro.otf');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('/assets/fonts/apercu_medium_pro.otf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('/assets/fonts/apercu_medium_italic_pro.otf');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('/assets/fonts/apercu_bold_pro.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('/assets/fonts/apercu_bold_italic_pro.otf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+body{
+    font-family: 'Apercu Pro', 'Helvetica Neue',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    text-rendering: OptimizeLegibility;
+    color: #000;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+.emoji {
+    width: 1em;
+    height: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}
+
+li{
+    list-style: none;
+}
+
+p{
+    font-size: 16px;
+    line-height: 24px;
+    margin: 10px 0;
+}
+
+a, a:hover{
+    color: #000; 
+}
+
+.btn{
+    border-radius: 0;
+    padding: 10px 20px;
+    font-weight: 300;
+}
+
+.btn-blue, .btn-blue:hover{
+    background-color: #0F34D2;
+    color: #FFF;
+}
+
+.btn-white{
+    background-color: #fff;
+    color: #0F34D2;
+}
+
+.theme{
+    cursor: pointer;
+}
+
+.content{
+    margin-top: 150px;
+}
+
+h2{
+    font-size: 6vw;
+    font-weight: 700;
+    color: #0F34D2;
+    margin-bottom: 60px;
+}
+
+@media (max-width:992px){
+
+    .navbar-fixed-top .navbar-collapse {
+        max-height: 400px;
+    }
+
+    h2{
+        font-size: 10vw;
+    }
+}
+
+
+@media (max-width:768px) {
+    .navbar-default, .navbar-collapse{
+        background: #fff;
+    }
+
+    .navbar-default .navbar-nav>li>a{
+        padding: 15px 20px;
+        text-align: center;
+        border-bottom: 1px solid #F0F0F0;
+    }
+
+    .navbar-default .navbar-nav>li>a .btn.btn-blue{
+        background: none;
+        color: #000;
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .navbar-default .navbar-nav>li>a ~ .btn.btn-blue{
+        background: #0F34D2;
+    }
+
+    .mobile-shadow{
+        -webkit-transition: .2s all ease-in-out;
+        -moz-transition: .2s all ease-in-out;
+        -ms-transition: .2s all ease-in-out;
+        -o-transition: .2s all ease-in-out;
+        transition: .2s all ease-in-out;
+        box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    }
+}

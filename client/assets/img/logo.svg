@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="37px" height="37px" viewBox="0 0 37 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.1 (28215) - http://www.bohemiancoding.com/sketch -->
+    <title>logo copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BDC-2.2" transform="translate(-19.000000, -19.000000)" stroke-width="0.909090909" stroke="#0F34D2">
+            <g id="nav" transform="translate(20.000000, 20.000000)">
+                <g id="Group">
+                    <g id="logo-copy">
+                        <circle id="Oval-15" cx="17.5" cy="17.5" r="12.2727273"></circle>
+                        <rect id="Rectangle-61" opacity="0.33" x="0" y="0" width="35" height="35"></rect>
+                        <rect id="Rectangle-61-Copy" opacity="0.33" x="5.22727273" y="5.22727273" width="24.5454545" height="24.5454545"></rect>
+                        <circle id="Oval-14" cx="17.5" cy="17.5" r="17.5"></circle>
+                        <path d="M5.34090909,29.6590909 L29.6590909,5.34090909" id="Line" stroke-linecap="square"></path>
+                        <path d="M5.34090909,5.34090909 L29.6590909,29.6590909" id="Line-Copy-3" stroke-linecap="square"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
