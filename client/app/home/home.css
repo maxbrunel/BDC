@@ -1,12 +1,3 @@
-.navbar-default .navbar-nav.navbar-right>li>a, .navbar-default .navbar-nav.navbar-right>li>a:hover{
-	color: #fff;
-}
-
-.navbar-default .navbar-nav.navbar-right>li>a .btn, .navbar-default .navbar-nav.navbar-right>li>a:hover .btn{
-	color: #0F34D2;
-	background: #fff;
-}
-
 /*DESCRIPTION*/
 
 .description{
@@ -123,11 +114,13 @@ input.form-control:focus{
 
 .messages .exp, .messages .dest{
 	max-width: 250px;
-	width: 100%;
 	padding: 15px;
 	font-size: 16px;
 	margin-bottom: 15px;
+	display: table;
 }
+
+.messages .row div{display: inline-block;}
 
 .messages .exp{
 	background: rgba(0,0,0,.2);
@@ -150,9 +143,10 @@ input.form-control:focus{
 	float: right;
 	width: 100%;
 }
-.messages .loading{width: 76px; border-radius: 25px; padding: 15px 20px;}
+.messages .loading{width: 76px; border-radius: 25px; padding: 15px 20px; display: inline-block;}
 .loading .icon-bullet{
-	opacity: .2;
+	opacity: 1;
+	position: relative;
 	width: 7px;
 	height: 7px;
 	background: #fff;
@@ -160,15 +154,22 @@ input.form-control:focus{
 	display: inline-block;
 	border-radius: 100%;
 	vertical-align: middle;
-	animation: loading infinite 1.5s;
-    -webkit-animation: loading infinite 1.5s;
+	animation: loading-bounce ease-in-out infinite 1.5s;
+    -webkit-animation: loading-bounce ease-in-out infinite 1s;
 }
 
 .loading .icon-bullet:nth-child(1){animation-delay: 0s;}
-.loading .icon-bullet:nth-child(2){animation-delay: .5s;}
-.loading .icon-bullet:nth-child(3){animation-delay: 1s;}
+.loading .icon-bullet:nth-child(2){animation-delay: .2s;}
+.loading .icon-bullet:nth-child(3){animation-delay: .4s;}
 
-
+@media (min-width:992px){
+	.inscription{
+		position: fixed;
+		right: 0;
+		height: 100%;
+		overflow-y: auto;
+	}
+}
 @media (max-width:1200px){
 	.description, .inscription{
 	padding: 100px 0;
@@ -193,11 +194,17 @@ input.form-control:focus{
 	}
 
 	.messages{max-width: 500px; margin: 0 auto;}
-	.messages div{margin: 0 15px 15px 15px;}
+	.messages .row{margin:0 5px 15px;}
 }
 
-@keyframes loading {
+@keyframes loading-opacity {
 	0%		{opacity: .2;}
 	50%		{opacity: 1;}
 	100%	{opacity: .2;}
+}
+
+@keyframes loading-bounce {
+	0%		{top: 0;}
+	33%		{top: -5px;}
+	66%		{top: 0;}
 }

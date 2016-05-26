@@ -127,34 +127,4 @@ h2{
 }
 
 
-@media (max-width:768px) {
-    .navbar-default, .navbar-collapse{
-        background: #fff;
-    }
 
-    .navbar-default .navbar-nav>li>a{
-        padding: 15px 20px;
-        text-align: center;
-        border-bottom: 1px solid #F0F0F0;
-    }
-
-    .navbar-default .navbar-nav>li>a .btn.btn-blue{
-        background: none;
-        color: #000;
-        padding: 0;
-        margin-top: 0;
-    }
-
-    .navbar-default .navbar-nav>li>a ~ .btn.btn-blue{
-        background: #0F34D2;
-    }
-
-    .mobile-shadow{
-        -webkit-transition: .2s all ease-in-out;
-        -moz-transition: .2s all ease-in-out;
-        -ms-transition: .2s all ease-in-out;
-        -o-transition: .2s all ease-in-out;
-        transition: .2s all ease-in-out;
-        box-shadow: 0 5px 10px rgba(0,0,0,.1);
-    }
-}

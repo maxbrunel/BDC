@@ -4,5 +4,6 @@ angular.module("bdc",[
       "ui.router",
       'ui.bootstrap',
       'ngAnimate',
-      'afkl.ng.lazyImage'
+      'afkl.ng.lazyImage',
+      'oitozero.ngSweetAlert'
 ]);
