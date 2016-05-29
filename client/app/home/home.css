@@ -1,6 +1,6 @@
 /*DESCRIPTION*/
 
-.description{
+.col-md-7.description{
 	padding: 150px 0;
 	background: url(/assets/img/background.svg) no-repeat;
 	background-size: auto 66%;
@@ -45,25 +45,11 @@
 	margin: 8px auto;
 }
 
-footer{
-	position: fixed !important;
-    bottom: 0;
-    height: 34px;
-    padding: 10px 0;
-    font-size: 12px;
-    color: #D3D3D3;
-    line-height: 14px;
-}
-
-footer .col-md-6{
-	padding: 0;
-}
-
 
 /*INSCRIPTION*/
 
 .inscription{
-	background: #0F34D2;
+	background: #FFC81A;
 	color: #fff;
 	padding: 150px 0;
 }
@@ -79,7 +65,7 @@ input.form-control{
 	color: #fff;
 	margin: 15px 0;
 	border-radius: 0;
-	background-color: #0F34D2;
+	background-color: #FFC81A;
 }
 
 input.form-control:focus{
@@ -105,7 +91,7 @@ input.form-control:focus{
 }
 
 .fixed-background .blue{
-	background: #0F34D2;
+	background: #FFC81A;
 	height: 100%;
 	z-index: 0;
 }
@@ -123,15 +109,16 @@ input.form-control:focus{
 .messages .row div{display: inline-block;}
 
 .messages .exp{
-	background: rgba(0,0,0,.2);
+	background: #F6AC08;
 	border-radius: 25px 25px 25px 0;
+	font-weight: 700;
 }
 
 .messages .exp a{color: #fff; text-decoration: underline;font-weight: 700;}
 
 .messages .dest{
 	text-align: right;
-	color: #0F34D2;
+	color: #000;
 	background: #fff;
 	border-radius: 25px 25px 0 25px;
 }
@@ -154,8 +141,7 @@ input.form-control:focus{
 	display: inline-block;
 	border-radius: 100%;
 	vertical-align: middle;
-	animation: loading-bounce ease-in-out infinite 1.5s;
-    -webkit-animation: loading-bounce ease-in-out infinite 1s;
+	animation: loading-bounce ease-in-out infinite 1s;
 }
 
 .loading .icon-bullet:nth-child(1){animation-delay: 0s;}
@@ -171,7 +157,7 @@ input.form-control:focus{
 	}
 }
 @media (max-width:1200px){
-	.description, .inscription{
+	.col-md-7.description, .inscription{
 	padding: 100px 0;
 	}
 }
@@ -183,10 +169,6 @@ input.form-control:focus{
 
 	.share a{
 		margin: 0;
-	}
-
-	footer{
-		display: none;
 	}
 
 	.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:hover{
@@ -205,6 +187,6 @@ input.form-control:focus{
 
 @keyframes loading-bounce {
 	0%		{top: 0;}
-	33%		{top: -5px;}
-	66%		{top: 0;}
+	35%		{top: -6px;}
+	70%		{top: 0;}
 }

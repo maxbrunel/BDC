@@ -9,8 +9,8 @@ angular.module("bdc").controller("ApplicationController",
         SweetAlert.swal({
         title: "Custom Slack Theme",
         text: 'Copie le code suivant et colle le dans les préférences de Slack <br />' +
-        '<input type="text" value="#0F34D2,#0C2BB2,#FFFFFF,#0F34D2,#5E76E0,#FFFFFF,#FFFFFF,#EB4D5C" readonly="readonly" class="code">',
-        confirmButtonColor: '#0F34D2',
+        '<input type="text" value="#FFC81A,#0C2BB2,#FFFFFF,#FFC81A,#5E76E0,#FFFFFF,#FFFFFF,#EB4D5C" readonly="readonly" class="code">',
+        confirmButtonColor: '#FFC81A',
         type: 'success'
         });
     };

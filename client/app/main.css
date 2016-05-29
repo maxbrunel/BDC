@@ -70,6 +70,10 @@ body{
     vertical-align: -0.1em;
 }
 
+ul{
+    padding-left: 0;
+}
+
 li{
     list-style: none;
 }
@@ -91,13 +95,13 @@ a, a:hover{
 }
 
 .btn-blue, .btn-blue:hover{
-    background-color: #0F34D2;
-    color: #FFF;
+    background-color: #FFC81A;
+    color: #000;
 }
 
 .btn-white{
-    background-color: #fff;
-    color: #0F34D2;
+    background-color: #000;
+    color: #FFC81A;
 }
 
 .theme{
@@ -111,7 +115,7 @@ a, a:hover{
 h2{
     font-size: 6vw;
     font-weight: 700;
-    color: #0F34D2;
+    color: #FFC81A;
     margin-bottom: 60px;
 }
 

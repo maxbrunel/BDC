@@ -1,8 +1,8 @@
 .navbar-default .navbar-nav.navbar-right.blue-background>li>a, .navbar-default .navbar-nav.navbar-right.blue-background>li>a:hover{color: #fff;}
 
 .navbar-default .navbar-nav.navbar-right.blue-background>li>a .btn, .navbar-default .navbar-nav.navbar-right.blue-background>li>a:hover .btn{
-	color: #0F34D2;
-	background: #fff;
+	color: #FFC81A;
+	background: #000;
 }
 
 /*NAV*/
@@ -38,7 +38,7 @@ nav{
 }
 
 .navbar-brand{
-	font-size: 14px;
+/*	font-size: 14px;
 	padding: 20px;
     height: 100%;
     position: absolute;
@@ -47,7 +47,7 @@ nav{
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
-    transform: translateX(-50%);
+    transform: translateX(-50%);*/
 }
 
 nav .btn{
@@ -85,7 +85,7 @@ nav .btn{
 }
 
 .navbar-default .navbar-toggle .icon-bar{
-	background: #0F34D2;
+	background: #FFC81A;
 	border-radius: 0;
 }
 
@@ -176,8 +176,8 @@ nav .btn{
 	.navbar-brand .logo{padding-right: 0;}
 	.navbar-default .navbar-nav.navbar-right.blue-background>li>a, .navbar-default .navbar-nav.navbar-right.blue-background>li>a:hover{color: #000;}
 	.navbar-default .navbar-nav.navbar-right.blue-background>li>a .btn, .navbar-default .navbar-nav.navbar-right.blue-background>li>a:hover .btn{
-	color: #fff;
-	background: #0F34D2;
+	color: #000;
+	background: #FFC81A;
 	}
 
 }
@@ -204,7 +204,7 @@ nav .btn{
     }
 
     .navbar-default .navbar-nav>li>a ~ .btn.btn-blue{
-        background: #0F34D2;
+        background: #FFC81A;
     }
 
     .mobile-shadow{
@@ -215,4 +215,38 @@ nav .btn{
         transition: .2s all ease-in-out;
         box-shadow: 0 5px 10px rgba(0,0,0,.1);
     }
+}
+
+
+
+
+
+
+
+
+/*FOOTER*/
+
+footer.container{
+	padding: 30px 0;
+	border-top: 1px solid #FFC81A;
+}
+
+footer span.logo{
+	float: left;
+}
+
+footer .description{
+	margin-left: 50px;
+}
+
+footer .description p{
+	margin-top: 0;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+footer p.clear{color: #E9EBF0;}
+
+footer ul li{
+	line-height: 28px;
 }
