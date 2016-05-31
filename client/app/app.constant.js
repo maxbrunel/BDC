@@ -2,5 +2,5 @@
 
 angular.module("bdc")
     .constant("CONFIG",{
-       teamID : ""
+        teamID : "T0PSA99BN"
     });

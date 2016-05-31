@@ -20,7 +20,7 @@
         </div>
     </nav>
     <ui-view></ui-view>
-    <footer class="container">
+    <footer class="container" ng-class="{'home-footer': $state.includes('app.home'),'auth-footer': $state.includes('app.auth')}">
         <div class="row">
             <div class="col-md-6">
                 <span class="logo"><img src="/assets/img/logo.svg" alt="Bordeaux Designers club"></span>
@@ -45,7 +45,7 @@
             </div>
             <div class="col-md-2 col-sm-4">
                 <ul>
-                    <li><a ui-sref="app.home">Inscription</a></li>
+                    <li><a ng-if="!$state.includes('app.home')" ui-sref="app.home">Inscription</a></li>
                     <li><a href="http://bordeauxdesignersclub.slack.com">Connexion</a></li>
                 </ul>
             </div>

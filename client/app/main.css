@@ -2,6 +2,7 @@
 @import "header-footer/header-footer.css";
 @import "home/home.css";
 @import "deals/deals.css";
+@import "auth/auth.css";
 
 @font-face {
     font-family: 'Apercu Pro';
@@ -117,6 +118,26 @@ h2{
     font-weight: 700;
     color: #FFC81A;
     margin-bottom: 60px;
+}
+
+h2 .highlight{
+    background: #FFC81A;
+    color: #000;
+}
+
+small{
+    font-weight: 700;
+    color: #C0C0C0;
+}
+small a, small a:hover{color: #FFC81A;}
+
+::selection {
+  background: #FFC81A;
+  color: #000;
+}
+::-moz-selection {
+  background: #FFC81A;
+  color: #000;
 }
 
 @media (max-width:992px){

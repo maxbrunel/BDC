@@ -1,5 +1,10 @@
 {
   "node":{
     "port" : 3000
+  },
+  "slack" : {
+    "url" : "https://slack.com/api/oauth.access",
+    "clientID" : "23894315396.46152121879",
+    "clientSecret" : "a37b383d072d3a35c69802c6c73b9469"
   }
 }
