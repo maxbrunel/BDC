@@ -3,7 +3,7 @@
 /*DESCRIPTION*/
 
 .col-md-7.description{
-	padding: 150px 0;
+	padding: 150px 0 0;
 	background: url(/assets/img/background.svg) no-repeat, white;
 	background-size: auto 66%;
 	background-position: center;
@@ -161,7 +161,7 @@ input.form-control:focus{
 }
 @media (max-width:1200px){
 	.col-md-7.description, .inscription{
-	padding: 100px 0;
+	padding: 100px 0 0;
 	}
 }
 
