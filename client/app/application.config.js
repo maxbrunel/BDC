@@ -19,6 +19,11 @@ angular.module("bdc")
                 templateUrl : "/app/deals/deals.html",
                 url : "/deals"
             })
+            .state('app.auth',{
+                templateUrl : "/app/auth/auth.html",
+                url : "/auth?code",
+                controller : "AuthController"
+            })
     })
     .run(function ($rootScope, $state, $timeout,$location,$anchorScroll) {
         $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
@@ -38,7 +43,7 @@ angular.module("bdc")
             $anchorScroll('top');
 
         });
-        //$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-        //
-        //});
+        $rootScope.context = {
+            user : {}
+        };
     });
