@@ -4,4 +4,4 @@ client/bower_components/
 tmp/
 .idea/
 server/config/config.json
-app/app.constant.js
+client/app/app.constant.js
