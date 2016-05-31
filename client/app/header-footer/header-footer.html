@@ -10,7 +10,7 @@
                 <a class="navbar-brand" ui-sref="app.home"><span class="logo"><img src="/assets/img/logo.svg" alt="Bordeaux Designers Club"></span></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right" ng-class="{'blue-background': $state.includes('app.home')}">
+                <ul class="nav navbar-nav navbar-right" ng-class="{'yellow-background': $state.includes('app.home')}">
                     <li><a href="mailto:bordeauxdesignersclub@maxbrunel.com">Support</a></li>
                     <li><a ng-click="theme();">Thème</a></li>
                     <li><a href="http://bordeauxdesignersclub.slack.com">Connexion</a></li>
@@ -33,7 +33,7 @@
                 <ul>
                     <li><a href="">À propos</a></li>
                     <li><a ng-click="theme();">Thème</a></li>
-                    <li><a href="">Support</a></li>
+                    <li><a href="mailto:bordeauxdesignersclub@maxbrunel.com">Support</a></li>
                 </ul>
             </div>
             <div class="col-md-2 col-sm-4">
@@ -45,8 +45,8 @@
             </div>
             <div class="col-md-2 col-sm-4">
                 <ul>
-                    <li><a href="">Inscription</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a ui-sref="app.home">Inscription</a></li>
+                    <li><a href="http://bordeauxdesignersclub.slack.com">Connexion</a></li>
                 </ul>
             </div>
         </div>
