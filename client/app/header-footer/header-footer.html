@@ -8,6 +8,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" ui-sref="app.home"><span class="logo"><img src="/assets/img/logo.svg" alt="Bordeaux Designers Club"></span></a>
+                <span ng-if="context.user.ok">Bonjour {{context.user.user.name}}</span>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right" ng-class="{'yellow-background': $state.includes('app.home')}">
