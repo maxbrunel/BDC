@@ -59,7 +59,7 @@ nav .btn{
 	display: inline;
 }
 
-.navbar-default .navbar-nav>li>a{
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand .slack-hello{
 	padding: 27px 20px;
 	font-size: 14px;
 	color: #000;
@@ -217,9 +217,9 @@ nav .btn{
 
 /*FOOTER*/
 
-footer.container{
+footer{
 	padding: 30px;
-	border-top: 1px solid #FFC81A;
+	background: #FAFAFA;
 }
 
 footer span.logo{
@@ -246,14 +246,8 @@ footer ul li{
 	.home-footer{
 		position: absolute;
 		height: 154px;
-		bottom: 0;
-		left: 50%;
+		left: 0;
 		top: 100%;
-		-webkit-transform: translateX(-50%);
-		-moz-transform: translateX(-50%);
-		-ms-transform: translateX(-50%);
-		-o-transform: translateX(-50%);
-		transform: translateX(-50%);
-		z-index: -1;
+		width: 100%;
 	}
 }
