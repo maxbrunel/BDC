@@ -43,6 +43,13 @@ angular.module("bdc")
             $anchorScroll('top');
 
         });
+
+        $rootScope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
+            if(toState.name === 'app.deals' && !$rootScope.context.user.ok){
+                $state.go('app.auth');
+            }
+            console.log(toState,$rootScope.context.user.ok);
+        });
         $rootScope.context = {
             user : {}
         };
