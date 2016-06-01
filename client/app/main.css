@@ -2,6 +2,7 @@
 @import "header-footer/header-footer.css";
 @import "home/home.css";
 @import "deals/deals.css";
+@import "designers/designers.css";
 @import "auth/auth.css";
 
 @font-face {
@@ -112,6 +113,11 @@ a, a:hover{
     margin-top: 150px;
 }
 
+h1{
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
 h2{
     font-size: 6vw;
     font-weight: 700;
@@ -119,9 +125,18 @@ h2{
     margin-bottom: 60px;
 }
 
+h1 .highlight, h2 .highlight{
+    background: #FFC81A;
+    color: #000;
+}
+
+.photo-bg h2{color: #000;}
+.photo-bg h2 .highlight{background-color: #000; color: #FFC81A;}
+
 h2 .highlight{
     background: #FFC81A;
     color: #000;
+}
 }
 
 small{

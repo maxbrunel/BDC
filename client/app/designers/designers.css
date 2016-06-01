@@ -1,0 +1,124 @@
+.designers.content{margin-top: 0;}
+
+.designers header{
+	background: url(/assets/img/designers-header-bg.jpg) no-repeat, #FFC81A;
+	mix-blend-mode: multiply;
+	background-position: center;
+	background-size: cover;
+	top: 0;
+	padding: 90px 0;
+}
+
+/*Subnavigation*/
+
+.navbar-designers{
+	background: #fff;
+	height: 68px;
+}
+
+.navbar-designers .navbar-collapse, .navbar-designers .navbar-form{
+	padding: 0;
+	margin: 0 auto;
+}
+
+.navbar-designers input{
+	border: none;
+	box-shadow: none;
+	height: 68px;
+	margin: 0;
+	width: 70% !important;
+}
+
+.navbar-designers input:focus{
+	outline: none;
+	box-shadow: none;
+}
+
+.navbar-designers .input-group-addon.search{
+	background: transparent;
+	border: none;
+}
+
+.navbar-designers .skills-filters li{
+	padding: 20px 10px;
+	line-height: 28px;
+	cursor: pointer;
+}
+
+.navbar-designers .skills-filters li:before{
+	content: '';
+	height: 2px;
+	width: 0;
+	background: #FFC81A;
+	display: flex;
+	line-height: 28px;
+	margin-left: -10px;
+	bottom: 32px;
+	z-index: -1;
+	position: absolute;
+
+	-webkit-transition: all ease-in-out .2s;
+	-moz-transition: all ease-in-out .2s;
+	-ms-transition: all ease-in-out .2s;
+	-o-transition: all ease-in-out .2s;
+	transition: all ease-in-out .2s;
+}
+
+.navbar-designers .skills-filters li:hover:before{
+	width: 100%;
+}
+
+.designers-cards{
+	background: #FAFAFA;
+	padding: 15px 0;
+}
+
+.card{
+	background: #fff;
+	margin: 15px 0;
+	padding: 20px;
+}
+
+.card .header{
+	text-align: center;
+	border: 1px solid #FFC81A;
+	height: 65px;
+}
+
+.card .header-infos{
+	margin-top: -11px;
+}
+
+.card .hello, .card .work-at{
+	color: #C0C0C0;
+	font-size: 14px;
+	font-weight: 700;
+	background: #FFF;
+	padding: 0 10px;
+}
+
+.card .name{
+	font-size: 24px;
+	margin: 5px auto;
+	font-weight: 700;
+}
+
+.card .work-at span{color: #000;}
+
+.card .skills{margin: 25px 0;}
+.card .skills li{
+	font-size: 18px;
+	margin: 5px 0;
+}
+
+.card .skills li:before{
+	content: '';
+	height: 2px;
+	width: 40px;
+	margin-right: 10px;
+	background: #FFC81A;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+

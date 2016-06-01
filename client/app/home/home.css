@@ -3,7 +3,7 @@
 /*DESCRIPTION*/
 
 .col-md-7.description{
-	padding: 150px 0 0;
+	padding: 90px 0 0;
 	background: url(/assets/img/background.svg) no-repeat, white;
 	background-size: auto 66%;
 	background-position: center;
@@ -11,7 +11,7 @@
 }
 
 .share{
-	margin-top: 100px;
+	margin-top: 45px;
 	text-align: center;
 	padding: 0;
 }
@@ -61,29 +61,6 @@
 	opacity: .33;
 	color: #fff;
 }
-
-input.form-control{
-	border: 3px solid #fff;
-	padding: 20px 15px;
-	color: #fff;
-	margin: 15px 0;
-	border-radius: 0;
-	background-color: #FFC81A;
-}
-
-input.form-control:focus{
-	outline: none;
-	box-shadow: none;
-	border-color: transparent;
-}
-
-
-
-.form-control::-webkit-input-placeholder { color: rgba(255,255,255,.5); }
-.form-control:-moz-placeholder { color: rgba(255,255,255,.5); }
-.form-control::-moz-placeholder { color: rgba(255,255,255,.5); }
-.form-control:-ms-input-placeholder { color: rgba(255,255,255,.5); }
-
 
 /*BACKGROUNDS*/
 
