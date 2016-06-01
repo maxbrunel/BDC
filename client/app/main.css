@@ -1,6 +1,7 @@
 @import "css/button.css";
 @import "header-footer/header-footer.css";
 @import "home/home.css";
+@import "about/about.css";
 @import "deals/deals.css";
 @import "designers/designers.css";
 @import "auth/auth.css";
@@ -95,6 +96,8 @@ a, a:hover{
     font-weight: 300;
 }
 
+a:focus, button.btn:focus{outline: none;}
+
 .btn-blue, .btn-blue:hover{
     background-color: #FFC81A;
     color: #000;
@@ -125,9 +128,10 @@ h2{
     margin-bottom: 60px;
 }
 
-h1 .highlight, h2 .highlight{
+.highlight{
     background: #FFC81A;
     color: #000;
+    font-weight: 700;
 }
 
 .photo-bg h2{color: #000;}

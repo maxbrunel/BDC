@@ -15,6 +15,11 @@ angular.module("bdc")
                 url : "/"
             })
 
+            .state('app.about',{
+                templateUrl : "/app/about/about.html",
+                url : "/about"
+            })
+
             .state('app.designers',{
                 templateUrl : "/app/designers/designers.html",
                 url : "/designers"

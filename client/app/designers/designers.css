@@ -121,4 +121,9 @@
 	vertical-align: middle;
 }
 
+.join{
+	background: #FFC81A;
+	padding: 10px 0;
+}
 
+.join a{font-weight: 700;}
