@@ -89,34 +89,37 @@
 .messages .row div{display: inline-block;}
 
 .messages .exp{
-	background: #F6AC08;
+	background: #fff;
+	color: #000;
 	border-radius: 25px 25px 25px 0;
-	font-weight: 700;
 }
 
-.messages .exp a{color: #fff; text-decoration: underline;font-weight: 700;}
+.messages .exp a{color: #F6AC08; text-decoration: underline;font-weight: 700;}
 
 .messages .dest{
 	text-align: right;
-	color: #000;
-	background: #fff;
+	background: #F6AC08;
 	border-radius: 25px 25px 0 25px;
+	font-weight: 700;
 }
 
 .messages input{
+	background: #F6AC08;
 	border: none;
 	outline: none;
-	text-align: right;
+	text-align: left;
 	float: right;
 	width: 100%;
 }
+
+.messages input::-webkit-input-placeholder{color:rgba(255,255,255,.6);}
 .messages .loading{width: 76px; border-radius: 25px; padding: 15px 20px; display: inline-block;}
 .loading .icon-bullet{
 	opacity: 1;
 	position: relative;
 	width: 7px;
 	height: 7px;
-	background: #fff;
+	background: #FFC81A;
 	margin: 0 1px;
 	display: inline-block;
 	border-radius: 100%;

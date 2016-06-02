@@ -12,7 +12,7 @@ angular.module("bdc").controller("AuthController",
                             if(success.data.team.id != CONFIG.teamID){
                                 console.log('BAD TEAM');
                                 AuthService.logout();
-                                //Go to another page
+                                //$state.go('BADTEAMPAGE');
                             } else {
                                 console.log($rootScope.context.user);
                                 $state.go('app.deals');
