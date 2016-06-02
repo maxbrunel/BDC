@@ -77,6 +77,17 @@
 	background: #fff;
 	margin: 15px 0;
 	padding: 20px;
+	-webkit-transition: all ease-in-out .2s;
+	-moz-transition: all ease-in-out .2s;
+	-ms-transition: all ease-in-out .2s;
+	-o-transition: all ease-in-out .2s;
+	transition: all ease-in-out .2s;
+}
+
+@media (min-width: 768px){
+	.card:hover{
+		box-shadow: 0 20px 40px rgba(0,0,0,.1);
+	}
 }
 
 .card .header{

@@ -86,7 +86,7 @@ p{
     margin: 10px 0;
 }
 
-a, a:hover{
+a, a:hover, a:focus{
     color: #000; 
 }
 

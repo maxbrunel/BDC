@@ -176,9 +176,11 @@ nav .btn{
 
 
 @media (max-width:767px) {
-    .navbar-default, .navbar-collapse{
-        background: #fff;
-    }
+	nav{height: 40px;}
+	.navbar-header{height: 50px;}
+	.navbar-default .navbar-toggle, .navbar-default .navbar-toggle:hover{margin: 9px;}
+	.navbar-brand{padding: 8px 9px;}
+    .navbar-default, .navbar-collapse{background: #fff;}
     .navbar-brand h1{display: inline-block;}
 
     .navbar-default .navbar-nav>li>a{
