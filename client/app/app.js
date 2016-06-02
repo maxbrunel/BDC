@@ -5,5 +5,6 @@ angular.module("bdc",[
       'ui.bootstrap',
       'ngAnimate',
       'afkl.ng.lazyImage',
-      'oitozero.ngSweetAlert'
+      'oitozero.ngSweetAlert',
+      'wu.masonry'
 ]);
