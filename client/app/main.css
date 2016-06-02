@@ -3,6 +3,7 @@
 @import "home/home.css";
 @import "about/about.css";
 @import "deals/deals.css";
+@import "partners/partners.css";
 @import "designers/designers.css";
 @import "auth/auth.css";
 
@@ -134,8 +135,8 @@ h2{
     font-weight: 700;
 }
 
-.photo-bg h2{color: #000;}
-.photo-bg h2 .highlight{background-color: #000; color: #FFC81A;}
+h2.invert{color: #000;}
+h2 .highlight-invert{background-color: #000; color: #FFC81A;}
 
 h2 .highlight{
     background: #FFC81A;

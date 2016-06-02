@@ -1,0 +1,13 @@
+.vertical-align{display: flex; align-items: center;}
+
+.partenaires{margin-bottom: 100px;}
+.partenaires h2{margin-bottom: 0;}
+.partenaires li{height: 150px;}
+.partenaires li img{margin: 0 auto;}
+
+.partenaires-join{background: url(/assets/img/partners-background.jpg); background-size: cover; background-position: center;}
+.partenaires-join h2{margin-top: 100px;}
+.partenaires-join .messages{margin-bottom: 100px;}
+
+.partenaires-join p{margin-bottom: 60px;}
+.partenaires-join a{text-decoration: underline;}
