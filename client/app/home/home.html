@@ -1,153 +1,160 @@
-	<div class="fixed-background">
-		<div class="col-md-7 pattern"></div>
-		<div class="col-md-5 blue"></div>
+<div class="fixed-background">
+	<div class="col-md-7 pattern"></div>
+	<div class="col-md-5 blue"></div>
+</div>
+<div class="col-md-7 description">
+	<div class="col-lg-2 col-md-2"></div>
+	<div class="col-lg-8 col-md-8 container">
+		<h1>Bienvenue dans le <br><span class="highlight">Bordeaux Designers Club</span></h1>
+		<p>Rejoins la première communauté de designers bordelais. Que tu sois Product Designer, UX Designer, DA, étudiant ou même stagiaire, vient partager ta passion et tes expériences avec nous.</p><p>Tu cherches un plan design près de chez toi ? Inscris-toi gratuitement et rencontre les graphistes de ta région. L’objectif est juste de discuter autour d’un réseau, de partager ses recherches de stages & jobs à pourvoir, ses inspirations ou encore de collecter du feedback.</p><p>PS : Nous utilisons Slack.</p>
+		<ul class="share">
+			<li><span class="icon"><img src="/assets/img/twitter.svg" alt="Twitter"></span>Partager sur Twitter</li>
+			<li><span class="icon"><img src="/assets/img/messenger.svg" alt="Messenger"></span>Envoyer via Messenger</li>
+		</ul>
 	</div>
-	<div class="col-md-7 description">
-		<div class="col-lg-2 col-md-2"></div>
-		<div class="col-lg-8 col-md-8 container">
-			<h1>Bienvenue dans le <br><span class="highlight">Bordeaux Designers Club</span></h1>
-			<p>Rejoins la première communauté de designers bordelais. Que tu sois Product Designer, UX Designer, DA, étudiant ou même stagiaire, vient partager ta passion et tes expériences avec nous.</p><p>Tu cherches un plan design près de chez toi ? Inscris-toi gratuitement et rencontre les graphistes de ta région. L’objectif est juste de discuter autour d’un réseau, de partager ses recherches de stages & jobs à pourvoir, ses inspirations ou encore de collecter du feedback.</p><p>PS : Nous utilisons Slack.</p>
-			<ul class="share">
-				<li><span class="icon"><img src="/assets/img/twitter.svg" alt="Twitter"></span>Partager sur Twitter</li>
-				<li><span class="icon"><img src="/assets/img/messenger.svg" alt="Messenger"></span>Envoyer via Messenger</li>
-			</ul>
-		</div>
-		<div class="col-lg-2 col-md-2"></div>
-	</div>
-	<div class="col-md-5 inscription">
-		<div class="col-md-1"></div>
-		<div class="col-md-8">
-			<div class="messages">
+	<div class="col-lg-2 col-md-2"></div>
+</div>
+<div class="col-md-5 inscription">
+	<div class="col-md-1"></div>
+	<div class="col-md-8">
+		<div class="messages">
+			<div>
 				<div class="exp row">
 					Salut toi, alors tu veux nous rejoindre ? 🍻
 					<br>
-					<a href="">Oui</a> ou <a href="https://goo.gl/AxOc7q">Non</a>
+					<a href="" ng-click="inscriptionBegin = true">Oui</a> ou <a href="https://goo.gl/AxOc7q">Non</a>
 				</div>
-				<div class="row">
+				<div class="row" ng-if="inscriptionBegin">
 					<div class="pull-right dest">J'en rêve depuis toujours</div>
 				</div>
-				<div class="row exp">
-					<div>
-						Génial ! Je me demandais, quel est ton nom (en entier bien sûr) ?
-					</div>
-				</div>
-				<div class="row">
-					<div class="pull-right dest">
-						<input type="text" placeholder="Écris ton nom">
-					</div>
-				</div>
-				<div class="row exp">
-					<div>
-						Enchanté <strong>Max</strong> 👋
-					</div>
-				</div>
-				<div class="row exp">
-					<div>
-						Peux-tu m'envoyer ton adresse e-mail pour que je finalise ton inscription ?
-					</div>
-				</div>
-				<div class="row">
-					<div class="pull-right dest">
-						<input type="email" placeholder="Écris ton e-mail">
-					</div>
-				</div>
-				<div class="row exp">
-					<div>
-						Merci Max 💌<br>Je peux donc t'inscrire avec l'addresse <strong>mail@mail.com</strong>
-					</div>
-				</div>
-				<div class="row">
-					<div class="pull-right dest">
-						<input type="text" placeholder="Oui / Non">
-					</div>
-				</div>
-				<div class="row exp">
-					<div>
-						À ce propos, où est-ce que tu travailles ? 🏢
-					</div>
-				</div>
-				<div class="row">
-					<div class="pull-right dest">
-						<input type="text" placeholder="Entreprise / Formation">
-					</div>
-				</div>
-				<div class="row exp">
-					<div>
-						Cool… Du coup, quelles sont tes compétences ?
-					</div>
-				</div>
-				<div class="row exp">
-					<div>
-						<strong>Choisis parmis ces compétences en séparant tes choix par des virgules :</strong>
-						<br>• UI
-						<br>• UX
-						<br>• Motion Design
-						<br>• Typographie
-						<br>• Illustration
-						<br>• Photographie
-						<br>• Front-end
-					</div>
-				</div>
-				<div class="row">
-					<div class="pull-right dest">
-						<input type="text" placeholder="UI, UX, …">
-					</div>
-				</div>
-				<div class="row exp">
-					<div>
-						😻 Tu as un lien où je peux voir ce que tu fais ?
-					</div>
-				</div>
-				<div class="row">
-					<div class="pull-right dest">
-						<input type="text" placeholder="http://">
-					</div>
-				</div>
-				<!-- LIEN : OK -->
-				<div class="row exp">
-					<div>
-						J'irai voir ça ! <br>Dernière petite question & je te laisse tranquille
-					</div>
-				</div>
-				<!-- NON -->
-				<div class="row exp">
-					<div>
-						Tant pis, on fera sans ! <br>Dernière petite question & je te laisse tranquille
-					</div>
-				</div>
-				<div class="row exp">
-					<div>
-						Est-ce que tu es disponible pour du travail ?
-					</div>
-				</div>
-				<div class="row">
-					<div class="pull-right dest">
-						<input type="text" placeholder="Oui / Non">
-					</div>
-				</div>
-				<div class="row exp">
-					<div>
-						Ça marche. Merci pour ces informations. Tu devrais bientôt recevoir un e-mail de Slack pour rejoindre la discussion. Tu pourras commencer par te présenter rapidement sur le channel <strong>#présentation</strong> en arrivant 😉
-					</div>
-				</div>
-				<div class="row exp">
-					<div>
-						À très vite ! 👊<br>– Max
-					</div>
-				</div>
-
-				<!-- ERROR -->
-				<div class="row exp">
-					<div>
-						Oups, je n'ai pas bien compris…
-					</div>
-				</div>
-				<div class="row exp loading">
-					<div class="icon-bullet"></div>
-					<div class="icon-bullet"></div>
-					<div class="icon-bullet"></div>
-				</div>
 			</div>
+			<div ng-repeat="message in messagesList track by $index">
+				<bdc-form-messenger message="message" call-back="nextStep"></bdc-form-messenger>
+			</div>
+
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--Génial ! Je me demandais, quel est ton nom (en entier bien sûr) ?-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<div class="pull-right dest">-->
+			<!--&lt;!&ndash;<input type="text" placeholder="Écris ton nom">&ndash;&gt;-->
+			<!--<bdc-form-messenger questions="pouet" placeholder="dezadaz" on-step-validate="testFunc"></bdc-form-messenger>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--Enchanté <strong>Max</strong> 👋-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--Peux-tu m'envoyer ton adresse e-mail pour que je finalise ton inscription ?-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<div class="pull-right dest">-->
+			<!--<input type="email" placeholder="Écris ton e-mail">-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--Merci Max 💌<br>Je peux donc t'inscrire avec l'addresse <strong>mail@mail.com</strong>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<div class="pull-right dest">-->
+			<!--<input type="text" placeholder="Oui / Non">-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--À ce propos, où est-ce que tu travailles ? 🏢-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<div class="pull-right dest">-->
+			<!--<input type="text" placeholder="Entreprise / Formation">-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--Cool… Du coup, quelles sont tes compétences ?-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--<strong>Choisis parmis ces compétences en séparant tes choix par des virgules :</strong>-->
+			<!--<br>• UI-->
+			<!--<br>• UX-->
+			<!--<br>• Motion Design-->
+			<!--<br>• Typographie-->
+			<!--<br>• Illustration-->
+			<!--<br>• Photographie-->
+			<!--<br>• Front-end-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<div class="pull-right dest">-->
+			<!--<input type="text" placeholder="UI, UX, …">-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--😻 Tu as un lien où je peux voir ce que tu fais ?-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<div class="pull-right dest">-->
+			<!--<input type="text" placeholder="http://">-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--&lt;!&ndash; LIEN : OK &ndash;&gt;-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--J'irai voir ça ! <br>Dernière petite question & je te laisse tranquille-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--&lt;!&ndash; NON &ndash;&gt;-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--Tant pis, on fera sans ! <br>Dernière petite question & je te laisse tranquille-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--Est-ce que tu es disponible pour du travail ?-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row">-->
+			<!--<div class="pull-right dest">-->
+			<!--<input type="text" placeholder="Oui / Non">-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--Ça marche. Merci pour ces informations. Tu devrais bientôt recevoir un e-mail de Slack pour rejoindre la discussion. Tu pourras commencer par te présenter rapidement sur le channel <strong>#présentation</strong> en arrivant 😉-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--À très vite ! 👊<br>– Max-->
+			<!--</div>-->
+			<!--</div>-->
+
+			<!--&lt;!&ndash; ERROR &ndash;&gt;-->
+			<!--<div class="row exp">-->
+			<!--<div>-->
+			<!--Oups, je n'ai pas bien compris…-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row exp loading">-->
+			<!--<div class="icon-bullet"></div>-->
+			<!--<div class="icon-bullet"></div>-->
+			<!--<div class="icon-bullet"></div>-->
+			<!--</div>-->
 		</div>
-		<div class="col-md-3"></div>
 	</div>
+	<div class="col-md-3"></div>
+</div>

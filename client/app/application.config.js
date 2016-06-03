@@ -12,7 +12,8 @@ angular.module("bdc")
         })
             .state('app.home',{
                 templateUrl : "/app/home/home.html",
-                url : "/"
+                url : "/",
+                controller : "HomeController"
             })
 
             .state('app.about',{

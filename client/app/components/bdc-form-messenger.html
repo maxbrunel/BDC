@@ -1,0 +1,15 @@
+<div ng-repeat="question in messageList track by $index">
+    <div class="exp row" ng-class="{'loading' : question.loading}">
+        <div ng-if="!question.loading">{{question.content}}</div>
+        <div ng-if="question.loading" class="icon-bullet"></div>
+        <div ng-if="question.loading" class="icon-bullet"></div>
+        <div ng-if="question.loading" class="icon-bullet"></div>
+    </div>
+</div>
+<div>
+    <div class="row" ng-if="questionsAsked">
+        <div class="pull-right dest">
+            <bdc-input-form-messenger placeholder="{{message.placeHolder}}" step-number="{{message.stepNumber}}" on-step-validate="callBack"></bdc-input-form-messenger>
+        </div>
+    </div>
+</div>
