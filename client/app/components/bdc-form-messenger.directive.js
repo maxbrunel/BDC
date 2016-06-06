@@ -20,9 +20,12 @@ angular.module("bdc").directive("bdcFormMessenger",
                         if(index == $scope.message.questions.length - 1){
                             $timeout(function(){
                                 $scope.questionsAsked = true;
+                                if($scope.message.finalStep){
+                                    $scope.callBack();
+                                }
                             },400);
                         }
-                    },1500 * (index + 1));
+                    },1000 * (index + 1));
                 };
 
                 $scope.pushQuestionInList = function(question,index){
@@ -31,7 +34,7 @@ angular.module("bdc").directive("bdcFormMessenger",
                             $scope.messageList.push(question);
                             $scope.setLoadingTimeOut(question,index);
                         },500 * index)
-                    },1500 * index)
+                    },(1000  + $scope.message.questions.length * 150) * index)
                 }
 
             }],
@@ -42,7 +45,7 @@ angular.module("bdc").directive("bdcFormMessenger",
                         loading : true
                     };
                     scope.pushQuestionInList(question,index);
-                })
+                });
             }
         }
     });

@@ -19,10 +19,10 @@ angular.module("bdc").directive("bdcInputFormMessenger",
                 };
                 $scope.add = function () {
                     $scope.retryMessage = angular.copy($scope.message);
-                    $scope.message.questions = [];
-                    $scope.message.questions.push("Oups je n'ai pas compris");
-                    $scope.message.questions.push($scope.message.tips);
-                    var el = $compile('<bdc-form-messenger message="message" call-back="onStepValidate"></bdc-form-messenger>')( $scope );
+                    $scope.retryMessage.questions = [];
+                    $scope.retryMessage.questions.push("Oups je n'ai pas compris");
+                    $scope.retryMessage.questions.push($scope.message.tips);
+                    var el = $compile('<bdc-form-messenger message="retryMessage" call-back="onStepValidate"></bdc-form-messenger>')( $scope );
                     $element.parent().parent().parent().append(el);
                 };
             }],
