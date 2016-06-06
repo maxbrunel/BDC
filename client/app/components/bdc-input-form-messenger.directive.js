@@ -9,7 +9,7 @@ angular.module("bdc").directive("bdcInputFormMessenger",
                 'placeholder' : "@",
                 'stepNumber' : "@"
             },
-            'template' :'<input ng-if="!disabled" type="text" placeholder="{{placeholder}}" ng-model="input.content"/><div ng-if="disabled">{{input.content}}</div>',
+            'template' :'<input ng-if="!disabled" class="message-input" type="text" placeholder="{{placeholder}}" ng-model="input.content"/><div ng-if="disabled">{{input.content}}</div>',
             controller : ['$scope',function($scope){
                 $scope.input = {
                     content : ""

@@ -87,12 +87,12 @@
 }
 
 .messages .row.ng-enter{
-	transition: 0.5s ease-in-out all;
-	transform-origin: 100% 100%;
+	transition: .3s ease-in-out all;
 	margin-bottom: -54px;
 	transform: scale(0);
 	opacity: 0;
 }
+
 .messages .row.ng-enter.ng-enter-active{
 	transform: scale(1);
 	margin-bottom: 0;
@@ -100,28 +100,25 @@
 }
 
 .messages .question-content.ng-enter {
-	transition: 0.5s ease-in-out all;
-	margin-top: -50px;
-	opacity: 0;
+	animation: question-content ease-in-out .4s;
 }
-.messages .question-content.ng-enter.ng-enter-active {
+/*.messages .question-content.ng-enter.ng-enter-active {
 	margin-top: 0;
 	opacity: 1;
-}
+}*/
 
 .messages .loading {
-	transition: all ease-in-out;
+	animation: question-content ease-in-out .2s;
 }
 
-.messages .loading-finished {
-	/*height: 250px;*/
-}
+
 .messages .row div{display: inline-block;}
 
 .messages .exp{
 	background: #fff;
 	color: #000;
 	border-radius: 25px 25px 25px 0;
+	transform-origin: 100% 0%;
 }
 
 .messages .exp a{color: #F6AC08; text-decoration: underline;font-weight: 700;}
@@ -132,19 +129,19 @@
 	background: #F6AC08;
 	border-radius: 25px 25px 0 25px;
 	font-weight: 700;
+	transform-origin: 100% 100%;
 }
 
 .messages input{
 	background: #F6AC08;
 	border: none;
 	outline: none;
-	text-align: left;
+	text-align: right;
 	float: right;
-	width: 100%;
 }
 
 .messages input::-webkit-input-placeholder{color:rgba(255,255,255,.6);}
-.messages .loading{width: 76px; border-radius: 25px; padding: 15px 20px; display: inline-block;}
+.messages .loading{width: 76px; border-radius: 25px; padding: 15px 20px; display: inline-block; transform-origin: 0% 100%;}
 .loading .icon-bullet{
 	opacity: 1;
 	position: relative;
@@ -210,4 +207,11 @@
 	0%		{top: 0;}
 	35%		{top: -6px;}
 	70%		{top: 0;}
+}
+
+@keyframes question-content {
+	0%		{opacity: 0; margin-top: -54px;}
+	50% 	{opacity: 0; }
+	75%		{margin-top: 0; }
+	100%	{opacity: 1; margin-top: 0; }
 }
