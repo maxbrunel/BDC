@@ -18,7 +18,9 @@ angular.module("bdc").directive("bdcFormMessenger",
                     $timeout(function(){
                         question.loading = false;
                         if(index == $scope.message.questions.length - 1){
-                            $scope.questionsAsked = true;
+                            $timeout(function(){
+                                $scope.questionsAsked = true;
+                            },400);
                         }
                     },1500 * (index + 1));
                 };

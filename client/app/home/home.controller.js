@@ -8,28 +8,54 @@ angular.module("bdc").controller("HomeController",
             $scope.messages =[
                 {
                     "questions" : [
-                        "Génial ! Je me demandais, quel est ton nom (en entier bien sûr) ?",
-                        "Et ça c'est une autre question genre au cas ou t'es un peu con"
+                        "Génial ! Je me demandais, quel est ton nom (en entier bien sûr) ?"
                     ],
                     stepNumber : 0,
                     placeHolder : "Écris ton nom",
                     active : false,
                     finished : false,
-                    property : "name"
+                    property : "name",
+                    checkStep : function(name){
+                        return name.split(" ").length >= 2 && name.length != 0;
+                    },
+                    tips : "Essaye d'écrire ton nom ET ton prénom"
                 },
                 {
                     "questions" : [
-                        "Deuxieme etape BITCHIIIEJOIEJO",
-                        "Et ça c'est une autre question genre au cas ou t'es un peu con"
+
                     ],
                     stepNumber : 1,
-                    placeHolder : "Ecris ce que tu veux bitch",
+                    placeHolder : "Écris ton e-mail",
                     active : false,
                     finished : false,
-                    property : "pouet"
-                }
-            ];
+                    property : "email",
+                    checkStep : function(email){
+                        return email.split("@").length > 1 && email.split(" ").length == 1
+                    },
+                    tips : "Essaye D'écrire un vrai e-mail quand même. Fais des putains d'efforts"
+                },
+                {
+                    "questions" : [
 
+                    ],
+                    stepNumber : 2,
+                    placeHolder : "Entreprise / Formation",
+                    active : false,
+                    finished : false,
+                    property : "company"
+                },
+                {
+                    "questions" : [
+                        "Cool… Du coup, quelles sont tes compétences ?"
+                    ],
+                    stepNumber : 2,
+                    placeHolder : "Entreprise / Formation",
+                    active : false,
+                    finished : false,
+                    property : "skills"
+                }
+
+            ];
             var user = {
                 name : ""
             };
@@ -42,6 +68,11 @@ angular.module("bdc").controller("HomeController",
                 $scope.$apply(function() {
                     $scope.messagesList[index].finished = true;
                     user[$scope.messagesList[index].property] = data;
+                    if(nStep == 0){
+                        $scope.messages[index + 1].questions = ["Enchanté " + data.split(" ")[0],"Peux-tu m'envoyer ton adresse e-mail pour que je finalise ton inscription ?"]
+                    } else if (nStep == 1){
+                        $scope.messages[index + 1].questions = ["Merci " + user.name + ". Je t'inscris donc avec l'adresse " + user.email,"À ce propos, où est-ce que tu travailles ?"]
+                    }
                 });
                 if($scope.messages[index + 1]){
                     $scope.$apply(function() {
