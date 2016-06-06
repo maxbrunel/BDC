@@ -99,6 +99,23 @@
 	opacity: 1;
 }
 
+.messages .question-content.ng-enter {
+	transition: 0.5s ease-in-out all;
+	margin-top: -50px;
+	opacity: 0;
+}
+.messages .question-content.ng-enter.ng-enter-active {
+	margin-top: 0;
+	opacity: 1;
+}
+
+.messages .loading {
+	transition: all ease-in-out;
+}
+
+.messages .loading-finished {
+	/*height: 250px;*/
+}
 .messages .row div{display: inline-block;}
 
 .messages .exp{

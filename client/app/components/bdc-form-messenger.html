@@ -1,11 +1,10 @@
-<div ng-repeat="question in messageList track by $index">
-    <div class="exp row" ng-class="{'loading' : question.loading}">
-        <div ng-if="!question.loading">{{question.content}}</div>
-        <div ng-if="question.loading" class="icon-bullet"></div>
-        <div ng-if="question.loading" class="icon-bullet"></div>
-        <div ng-if="question.loading" class="icon-bullet"></div>
-    </div>
+<div ng-repeat="question in messageList track by $index" class="exp row" ng-class="{'loading' : question.loading,'loading-finished' : !question.loading}">
+    <div class="question-content" ng-if="!question.loading">{{question.content}}</div>
+    <div ng-if="question.loading" class="icon-bullet"></div>
+    <div ng-if="question.loading" class="icon-bullet"></div>
+    <div ng-if="question.loading" class="icon-bullet"></div>
 </div>
+
 <div>
     <div class="row" ng-if="questionsAsked">
         <div class="pull-right dest">
