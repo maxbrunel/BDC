@@ -101,7 +101,8 @@ angular.module("bdc").controller("HomeController",
                         } else {
                             return false
                         }
-                    }
+                    },
+                    tips : "Il faut répondre par oui ou non enfin !"
                 },
                 {
                     "questions" : [
