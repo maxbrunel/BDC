@@ -48,7 +48,7 @@ angular.module("bdc").controller("HomeController",
                     "questions" : [
                         "Cool… Du coup, quelles sont tes compétences ?"
                     ],
-                    stepNumber : 2,
+                    stepNumber : 3,
                     placeHolder : "Entreprise / Formation",
                     active : false,
                     finished : false,
@@ -56,9 +56,7 @@ angular.module("bdc").controller("HomeController",
                 }
 
             ];
-            var user = {
-                name : ""
-            };
+            var user = {};
 
             $scope.messagesList = [];
 

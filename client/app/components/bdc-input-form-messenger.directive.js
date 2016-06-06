@@ -13,14 +13,14 @@ angular.module("bdc").directive("bdcInputFormMessenger",
                 'message' : '='
             },
             'template' :'<input ng-if="!disabled" type="text" placeholder="{{placeholder}}" ng-model="input.content"/><div ng-if="disabled">{{input.content}}</div>',
-            controller : ['$scope',function($scope){
+            controller : ['$scope','$compile','$element',function($scope,$compile,$element){
                 $scope.input = {
                     content : ""
                 };
                 $scope.add = function () {
                     $scope.retryMessage = angular.copy($scope.message);
                     $scope.message.questions = [];
-                    $scope.message.questions.push("Oups je n'ai pas comrpis");
+                    $scope.message.questions.push("Oups je n'ai pas compris");
                     $scope.message.questions.push($scope.message.tips);
                     var el = $compile('<bdc-form-messenger message="message" call-back="onStepValidate"></bdc-form-messenger>')( $scope );
                     $element.parent().parent().parent().append(el);
