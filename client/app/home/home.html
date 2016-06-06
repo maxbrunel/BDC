@@ -20,12 +20,12 @@
 		<div class="messages">
 			<div>
 				<div class="exp row">
-					Salut toi, alors tu veux nous rejoindre ? 🍻
-					<br>
-					<a href="" ng-click="inscriptionBegin = true">Oui</a> ou <a href="https://goo.gl/AxOc7q">Non</a>
+					Salut toi 👋 Alors, quel est ton programme aujourd'hui ? 😎
 				</div>
-				<div class="row" ng-if="inscriptionBegin">
-					<div class="pull-right dest">J'en rêve depuis toujours</div>
+				<div class="row">
+					<div class="pull-right dest">
+						<a href="" ng-click="inscriptionBegin = true">Je rejoins le Club</a>
+					</div>
 				</div>
 			</div>
 			<div ng-repeat="message in messagesList track by $index">
