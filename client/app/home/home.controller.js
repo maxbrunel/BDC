@@ -14,10 +14,11 @@ angular.module("bdc").controller("HomeController",
                     placeHolder : "Écris ton nom",
                     finished : false,
                     property : "name",
+                    class : "capitalize",
                     checkStep : function(name){
                         return name.split(" ").length >= 2 && name.length != 0;
                     },
-                    tips : "Essaye d'écrire ton nom ET ton prénom"
+                    tips : "Essaie plutôt d'écrire ton prénom puis ton nom"
                 },
                 {
                     "questions" : [
@@ -30,7 +31,7 @@ angular.module("bdc").controller("HomeController",
                     checkStep : function(email){
                         return email.split("@").length > 1 && email.split(" ").length == 1
                     },
-                    tips : "Essaye D'écrire un vrai e-mail quand même. Fais des putains d'efforts"
+                    tips : "Il semblerait que ton e-mail soit incorrecte. Si c'est une blague, c'est pas drôle !"
                 },
                 {
                     "questions" : [
@@ -39,11 +40,12 @@ angular.module("bdc").controller("HomeController",
                     stepNumber : 2,
                     placeHolder : "Entreprise / Formation",
                     finished : false,
-                    property : "company"
+                    property : "company",
+                    class : "capitalize"
                 },
                 {
                     "questions" : [
-                        "Cool… Du coup, quelles sont tes compétences ?",
+                        "Cool ! Du coup, quelles sont tes compétences ?",
                         "Choisis parmis ces compétences en séparant tes choix par des virgules :",
                         'UI, UX, Motion Design, Typograhie, Illustration, Photographie, Front-end'
                     ],
@@ -69,7 +71,7 @@ angular.module("bdc").controller("HomeController",
                         }
                         return boolean;
                     },
-                    tips : "Les compétences disponibles sont celles de la liste (au moins 2 incompétent de merde) et il faut séparer tout ça avec des virgules. Apprends à lire merci"
+                    tips : "Choisis au moins 2 compétences & sépare tout ça avec des virgules."
                 },
                 {
                     "questions" : [
@@ -106,7 +108,9 @@ angular.module("bdc").controller("HomeController",
                 },
                 {
                     "questions" : [
-                        "Merci !"
+                        "Ça marche. Tu devrais bientôt recevoir un e-mail de Slack pour rejoindre la discussion. Tu pourras commencer par te présenter rapidement sur le channel #présentation",
+                        "À bientôt",
+                        "– Max"
                     ],
                     stepNumber : 6,
                     finished : false,
@@ -127,22 +131,22 @@ angular.module("bdc").controller("HomeController",
                     if(nStep == 0){
                         $scope.messages[index + 1].questions = ["Enchanté " + data.split(" ")[0],"Peux-tu m'envoyer ton adresse e-mail pour que je finalise ton inscription ?"]
                     } else if (nStep == 1){
-                        $scope.messages[index + 1].questions = ["Merci " + user.name + ". Je t'inscris donc avec l'adresse " + user.email,"À ce propos, où est-ce que tu travailles ?"]
+                        $scope.messages[index + 1].questions = ["Merci " + user.name.split(" ")[0] + ". Je t'inscris donc avec l'adresse " + user.email,"À ce propos, où est-ce que tu travailles ?"]
                     } else if(nStep == 3) {
                         user[$scope.messagesList[index].property] = data.toUpperCase().split(",");
                     } else if(nStep == 4){
-                        if(data.toLowerCase() == "non" || data.toLowerCase() == "nop" || data.toLowerCase() == "no"){
+                        if(data.toLowerCase() == "non" || data.toLowerCase() == "nop" || data.toLowerCase() == "t'es ouf" || data.toLowerCase() == "no" || data.toLowerCase() == "trop pas" || data.toLowerCase() == "jamais" || data.toLowerCase() == "c'est mort" || data.toLowerCase() == "pourquoi faire ?" || data.toLowerCase() == "je m'en fous" || data.toLowerCase() == "pas vraiment" || data.toLowerCase() == "pas vraiment non" || data.toLowerCase() == "je ne pense pas" || data.toLowerCase() == "je m'en bas les couilles frère") {
                             data = null;
                             $scope.messages[index + 1].questions = ['Tant pis, on fera sans !'];
                         } else {
-                            $scope.messages[index + 1].questions = ['Super le lien ' + data + " est sauvegardé"];
+                            $scope.messages[index + 1].questions = ['Super j\'irai voir ça. Je mets l\'adresse de côté : ' + data + ''];
                         }
-                        $scope.messages[index + 1].questions.push("Dernière petite question & je te laisse tranquille")
+                        $scope.messages[index + 1].questions.push("Dernière question & je te laisse tranquille")
                         $scope.messages[index + 1].questions.push("Est-ce que tu es disponible pour du travail ?")
                     } else if (nStep == 5){
-                        if(data.toLowerCase() == "oui" || data.toLowerCase() == "yep" || data.toLowerCase() == "yes" || data.toLowerCase() == "carrément" || data.toLowerCase() == "bien entendu" || data.toLowerCase() == "toujours"){
+                        if(data.toLowerCase() == "oui" || data.toLowerCase() == "yep" || data.toLowerCase() == "yes" || data.toLowerCase() == "carrément" || data.toLowerCase() == "bien entendu" || data.toLowerCase() == "toujours" || data.toLowerCase() == "bien sûr" || data.toLowerCase() == "bien sur" || data.toLowerCase() == "évidemment" || data.toLowerCase() == "plutôt" || data.toLowerCase() == "plutôt oui" || data.toLowerCase() == "plutot" || data.toLowerCase() == "plutot oui"){
                             user[$scope.messagesList[index].property] = true;
-                        } else if(data.toLowerCase() == "non" || data.toLowerCase() == "nop" || data.toLowerCase() == "t'es ouf" || data.toLowerCase() == "no" || data.toLowerCase() == "trop pas" || data.toLowerCase() == "jamais") {
+                        } else if(data.toLowerCase() == "non" || data.toLowerCase() == "nop" || data.toLowerCase() == "t'es ouf" || data.toLowerCase() == "no" || data.toLowerCase() == "trop pas" || data.toLowerCase() == "jamais" || data.toLowerCase() == "c'est mort" || data.toLowerCase() == "pourquoi faire ?" || data.toLowerCase() == "je m'en fous" || data.toLowerCase() == "pas vraiment" || data.toLowerCase() == "pas vraiment non" || data.toLowerCase() == "je ne pense pas" || data.toLowerCase() == "je m'en bas les couilles frère") {
                             user[$scope.messagesList[index].property] = false;
                         }
                     }
@@ -152,7 +156,7 @@ angular.module("bdc").controller("HomeController",
                         $scope.messagesList.push($scope.messages[index + 1]);
                     })
                 } else {
-                    console.log("Formulaire terminé");
+                    console.log("Inscription terminée");
                     console.log(user)
                 }
             };
@@ -164,7 +168,7 @@ angular.module("bdc").controller("HomeController",
                 if(val){
                     $timeout(function(){
                         $scope.launchChat();
-                    },1000)
+                    },500)
                 }
             });
 

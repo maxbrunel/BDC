@@ -159,6 +159,8 @@ small a, small a:hover{color: #FFC81A;}
   color: #000;
 }
 
+.capitalize{text-transform: capitalize;}
+
 @media (max-width:992px){
 
     .navbar-fixed-top .navbar-collapse {

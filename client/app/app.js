@@ -6,5 +6,6 @@ angular.module("bdc",[
       'ngAnimate',
       'afkl.ng.lazyImage',
       'oitozero.ngSweetAlert',
-      'wu.masonry'
+      'wu.masonry',
+      'luegg.directives'
 ]);
