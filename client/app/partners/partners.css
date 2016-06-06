@@ -11,3 +11,10 @@
 
 .partenaires-join p{margin-bottom: 60px;}
 .partenaires-join a{text-decoration: underline;}
+
+@media (min-width: 992px){
+.partenaires-join .messages{
+    position: relative;
+	max-width: 350px;
+}
+}
