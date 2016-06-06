@@ -3,7 +3,7 @@
 .partenaires{margin-bottom: 100px;}
 .partenaires h2{margin-bottom: 0;}
 .partenaires li{height: 150px;}
-.partenaires li img{margin: 0 auto;}
+.partenaires li img{margin: 0 auto; display: inline-block;}
 
 .partenaires-join{background: url(/assets/img/partners-background.jpg); background-size: cover; background-position: center;}
 .partenaires-join h2{margin-top: 100px;}
@@ -13,8 +13,19 @@
 .partenaires-join a{text-decoration: underline;}
 
 @media (min-width: 992px){
-.partenaires-join .messages{
-    position: relative;
-	max-width: 350px;
+	.partenaires-join .messages{
+	    position: relative;
+		max-width: 350px;
+	}
 }
+
+@media (max-width: 992px){
+	.vertical-align{display: inline-block;}
+	.vertical-align .col-md-7{margin-top: 50px;}
+	.partenaires li{width: 49%; height: 80px;}
+	.partenaires li img{width: 100%; max-width: 150px; margin: 0 auto; display: block;}
+}
+
+@media (max-width: 768px){
+	.partenaires{margin: 0 auto; display: block;}
 }
