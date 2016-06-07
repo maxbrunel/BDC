@@ -3,7 +3,6 @@
 angular.module("bdc").controller("HomeController",
     ["$rootScope","$scope","$timeout",
         function($rootScope,$scope,$timeout){
-            $scope.inscriptionBegin = false;
 
             $scope.messages =[
                 {
@@ -162,15 +161,9 @@ angular.module("bdc").controller("HomeController",
             };
 
             $scope.launchChat = function(){
-                $scope.messagesList.push($scope.messages[0]);
+                $timeout(function(){$scope.messagesList.push($scope.messages[0]);},500)
             };
-            $scope.$watch('inscriptionBegin',function(val){
-                if(val){
-                    $timeout(function(){
-                        $scope.launchChat();
-                    },500)
-                }
-            });
+
 
 
             $scope.testFunc = function(){

@@ -24,22 +24,23 @@
 </div>
 <div class="col-md-5 inscription">
 	<div class="col-md-1"></div>
-	<div class="col-md-8">
-		<div class="messages" scroll-glue-bottom="glued">
-			<div>
-				<div class="exp row">
-					Salut toi 👋 Alors, quel est ton programme aujourd'hui ? 😎
-				</div>
-				<div class="row">
-					<div class="pull-right dest">
-						<a href="" ng-click="inscriptionBegin = true">Je rejoins le Club</a>
+		<div class="col-md-8">
+			<div class="messages">
+				<div>
+					<div class="exp row">
+						Salut toi 👋 Alors, quel est ton programme aujourd'hui ? 😎
+					</div>
+					<div class="row">
+						<div class="pull-right dest">
+							<a href="" ng-click="launchChat()">Je rejoins le Club</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div ng-repeat="message in messagesList track by $index">
-				<bdc-form-messenger message="message" call-back="nextStep"></bdc-form-messenger>
+				<div ng-repeat="message in messagesList track by $index">
+					<bdc-form-messenger message="message" call-back="nextStep"></bdc-form-messenger>
+				</div>
 			</div>
 		</div>
-	</div>
+
 	<div class="col-md-3"></div>
 </div>
