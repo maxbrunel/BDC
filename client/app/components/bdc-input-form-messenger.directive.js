@@ -13,8 +13,8 @@ angular.module("bdc").directive("bdcInputFormMessenger",
                 'message' : '=',
                 'class' : '='
             },
-            'template' :'<input ng-if="!disabled" autofocus="true" type="text" placeholder="{{placeholder}}" ng-model="input.content"/><div ng-if="disabled" class="{{class}}">{{input.content}}</div>',
-            controller : ['$scope','$compile','$element','$sanitize',function($scope,$compile,$element,$sanitize){
+            'template' :'<input ng-if="!disabled" type="text" placeholder="{{placeholder}}" ng-model="input.content"/><div ng-if="disabled" class="{{class}}">{{input.content}}</div>',
+            controller : ['$scope','$compile','$element','$sanitize','$timeout',function($scope,$compile,$element,$sanitize,$timeout){
                 $scope.glued = true;        // Autoscroll for new messages
                 $scope.input = {
                     content : ""
@@ -27,11 +27,20 @@ angular.module("bdc").directive("bdcInputFormMessenger",
                     var el = $compile('<bdc-form-messenger message="retryMessage" call-back="onStepValidate"></bdc-form-messenger>')( $scope );
                     $element.parent().parent().parent().append(el);
                 };
+
+                $scope.focusInput = function(elementThis){
+                    $timeout(function(){
+                        elementThis.children().context.childNodes[1].focus();
+                    })
+                }
             }],
             link : function(scope, element, attrs) {
                 if(typeof scope.checkStep != 'function'){
                     scope.checkStep = function(){return true;}
                 }
+
+                scope.focusInput(element);
+
                 element.bind("keydown keypress", function(event) {
                     if(event.which === 13) {
                         if(scope.checkStep(scope.input.content)){
