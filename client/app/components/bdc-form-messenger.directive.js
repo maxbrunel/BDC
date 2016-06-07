@@ -9,7 +9,7 @@ angular.module("bdc").directive("bdcFormMessenger",
                 'callBack' : '='
             },
             'templateUrl' :'/app/components/bdc-form-messenger.html',
-            controller : ['$scope','$timeout',function($scope,$timeout){
+            controller : ['$scope','$timeout','$sanitize',function($scope,$timeout,$sanitize){
                 $scope.messageList = [];
                 $scope.questionsAsked = false;
 
@@ -35,6 +35,10 @@ angular.module("bdc").directive("bdcFormMessenger",
                             $scope.setLoadingTimeOut(question,index);
                         },500 * index)
                     },(1000  + $scope.message.questions.length * 150) * index)
+                };
+
+                $scope.parseEmoji = function(string){
+                    return $sanitize(twemoji.parse(string));
                 }
 
             }],

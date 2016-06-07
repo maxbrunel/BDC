@@ -1,6 +1,6 @@
 <div ng-repeat="question in messageList track by $index" class="exp row" ng-class="{'loading' : question.loading,'loading-finished' : !question.loading}">
     <div class="question-content" ng-if="!question.loading">
-        <div>{{question.content}}</div>
+        <div ng-bind-html="parseEmoji(question.content)"></div>
     </div>
     <div ng-if="question.loading" class="icon-bullet"></div>
     <div ng-if="question.loading" class="icon-bullet"></div>

@@ -14,7 +14,7 @@ angular.module("bdc").directive("bdcInputFormMessenger",
                 'class' : '='
             },
             'template' :'<input ng-if="!disabled" autofocus="true" type="text" placeholder="{{placeholder}}" ng-model="input.content"/><div ng-if="disabled" class="{{class}}">{{input.content}}</div>',
-            controller : ['$scope','$compile','$element',function($scope,$compile,$element){
+            controller : ['$scope','$compile','$element','$sanitize',function($scope,$compile,$element,$sanitize){
                 $scope.glued = true;        // Autoscroll for new messages
                 $scope.input = {
                     content : ""

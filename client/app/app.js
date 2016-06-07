@@ -7,5 +7,6 @@ angular.module("bdc",[
       'afkl.ng.lazyImage',
       'oitozero.ngSweetAlert',
       'wu.masonry',
-      'luegg.directives'
+      'luegg.directives',
+      'ngSanitize'
 ]);

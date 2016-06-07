@@ -110,7 +110,7 @@ angular.module("bdc").controller("HomeController",
                     "questions" : [
                         "Ça marche. Tu devrais bientôt recevoir un e-mail de Slack pour rejoindre la discussion. Tu pourras commencer par te présenter rapidement sur le channel #présentation",
                         "À bientôt",
-                        "– Max"
+                        "– Max \u2764\uFE0F"
                     ],
                     stepNumber : 6,
                     finished : false,
