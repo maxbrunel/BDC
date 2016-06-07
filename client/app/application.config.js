@@ -23,7 +23,8 @@ angular.module("bdc")
 
             .state('app.designers',{
                 templateUrl : "/app/designers/designers.html",
-                url : "/designers"
+                url : "/designers",
+                controller : 'DesignersController'
             })
             .state('app.partners',{
                 templateUrl : "/app/partners/partners.html",

@@ -29,71 +29,86 @@
 	</div>
 	<div class="designers-cards">
 		<div class="container">
+			<div masonry>
+				<div class="masonry-brick col-md-4 col-sm-6" ng-repeat="user in users">
+					<div class="card">
+						<div class="header">
+							<div class="header-infos">
+								<span class="hello">Hello my name is</span>
+								<div class="name">{{user.name}}</div>
+								<span class="work-at">I work at&nbsp;<span>{{user.company}}</span></span>
+							</div>
+						</div>
+						<ul class="skills">
+							<li ng-repeat="skill in user.skills">{{skill}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--<div class="col-md-4 col-sm-6">-->
+				<!--<div class="card">-->
+					<!--<div class="header">-->
+						<!--<div class="header-infos">-->
+							<!--<span class="hello">Hello my name is</span>-->
+							<!--<div class="name">Max Brunel</div>-->
+							<!--<span class="work-at">I work at&nbsp;<span>Bordeaux Designers Club</span></span>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<ul class="skills">-->
+						<!--<li>UI</li>-->
+						<!--<li>UX</li>-->
+					<!--</ul>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div class="col-md-4 col-sm-6">-->
+				<!--<div class="card">-->
+					<!--<div class="header">-->
+						<!--<div class="header-infos">-->
+							<!--<span class="hello">Hello my name is</span>-->
+							<!--<div class="name">Max Brunel</div>-->
+							<!--<span class="work-at">I work at&nbsp;<span>Bordeaux Designers Club</span></span>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<ul class="skills">-->
+						<!--<li>UI</li>-->
+						<!--<li>UX</li>-->
+						<!--<li>Front-end</li>-->
+					<!--</ul>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div class="col-md-4 col-sm-6">-->
+				<!--<div class="card">-->
+					<!--<div class="header">-->
+						<!--<div class="header-infos">-->
+							<!--<span class="hello">Hello my name is</span>-->
+							<!--<div class="name">Max Brunel</div>-->
+							<!--<span class="work-at">I work at&nbsp;<span>Bordeaux Designers Club</span></span>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<ul class="skills">-->
+						<!--<li>UI</li>-->
+						<!--<li>UX</li>-->
+						<!--<li>Front-end</li>-->
+					<!--</ul>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div class="col-md-4 col-sm-6">-->
+				<!--<div class="card">-->
+					<!--<div class="header">-->
+						<!--<div class="header-infos">-->
+							<!--<span class="hello">Hello my name is</span>-->
+							<!--<div class="name">Max Brunel</div>-->
+							<!--<span class="work-at">I work at&nbsp;<span>Bordeaux Designers Club</span></span>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<ul class="skills">-->
+						<!--<li>UI</li>-->
+						<!--<li>UX</li>-->
+						<!--<li>Front-end</li>-->
+					<!--</ul>-->
+				<!--</div>-->
+			<!--</div>-->
 
-			<div class="col-md-4 col-sm-6">
-				<div class="card">
-					<div class="header">
-						<div class="header-infos">
-							<span class="hello">Hello my name is</span>
-							<div class="name">Max Brunel</div>
-							<span class="work-at">I work at&nbsp;<span>Bordeaux Designers Club</span></span>
-						</div>
-					</div>
-					<ul class="skills">
-						<li>UI</li>
-						<li>UX</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6">
-				<div class="card">
-					<div class="header">
-						<div class="header-infos">
-							<span class="hello">Hello my name is</span>
-							<div class="name">Max Brunel</div>
-							<span class="work-at">I work at&nbsp;<span>Bordeaux Designers Club</span></span>
-						</div>
-					</div>
-					<ul class="skills">
-						<li>UI</li>
-						<li>UX</li>
-						<li>Front-end</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6">
-				<div class="card">
-					<div class="header">
-						<div class="header-infos">
-							<span class="hello">Hello my name is</span>
-							<div class="name">Max Brunel</div>
-							<span class="work-at">I work at&nbsp;<span>Bordeaux Designers Club</span></span>
-						</div>
-					</div>
-					<ul class="skills">
-						<li>UI</li>
-						<li>UX</li>
-						<li>Front-end</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6">
-				<div class="card">
-					<div class="header">
-						<div class="header-infos">
-							<span class="hello">Hello my name is</span>
-							<div class="name">Max Brunel</div>
-							<span class="work-at">I work at&nbsp;<span>Bordeaux Designers Club</span></span>
-						</div>
-					</div>
-					<ul class="skills">
-						<li>UI</li>
-						<li>UX</li>
-						<li>Front-end</li>
-					</ul>
-				</div>
-			</div>
-			
 
 		</div>
 	</div>

@@ -1,8 +1,8 @@
 "use strict";
 
 angular.module("bdc").controller("HomeController",
-    ["$rootScope","$scope","$timeout",
-        function($rootScope,$scope,$timeout){
+    ["$rootScope","$scope","$timeout",'UsersService',
+        function($rootScope,$scope,$timeout,UsersService){
 
             $scope.messages =[
                 {
@@ -119,20 +119,45 @@ angular.module("bdc").controller("HomeController",
             ];
             var user = {};
 
+
             $scope.messagesList = [];
 
+            var goToNextStep = function(index){
+
+                if($scope.messages[index + 1]){
+                    $timeout(function(){$scope.$apply(function() {
+                        $scope.messagesList.push($scope.messages[index + 1]);
+                    })})
+                } else {
+                    console.log("Inscription terminée");
+                    console.log(user);
+                }
+            };
+
             $scope.nextStep = function(nStep,data){
-                console.log(data);
                 var index = parseInt(nStep);
                 $scope.$apply(function() {
-                    $scope.messagesList[index].finished = true;
-                    user[$scope.messagesList[index].property] = data;
+                    if($scope.messages[index]){
+                        $scope.messages[index].finished = true;
+                        user[$scope.messages[index].property] = data;
+                    }
                     if(nStep == 0){
                         $scope.messages[index + 1].questions = ["Enchanté " + data.split(" ")[0] + "&nbsp;\ud83d\udc4b","Peux-tu m'envoyer ton adresse e-mail pour que je finalise ton inscription ?"]
                     } else if (nStep == 1){
-                        $scope.messages[index + 1].questions = ["Merci " + user.name.split(" ")[0] + " \ud83d\udc8c Je t'inscris donc avec l'adresse " + user.email,"À ce propos, où est-ce que tu travailles ? \ud83c\udfe2"]
+                        UsersService.getUserByMail(user.email).then(function(success){
+                            if(success.data.email){
+                                $scope.messages[index].questions = ["Il semble que cette adresse e-mail existe déjà. Essayes avec une autre"];
+                                goToNextStep(index - 1);
+                            } else {
+                                $scope.messages[index + 1].questions = ["Merci " + user.name.split(" ")[0] + " \ud83d\udc8c Je t'inscris donc avec l'adresse " + user.email,"À ce propos, où est-ce que tu travailles ? \ud83c\udfe2"]
+                                goToNextStep(index);
+                            }
+                        },function(error){
+                            $scope.messages[index].questions = ["Il semble qu'il y ait eut une erreur. Déso. Redonnes moi ton adresse email ?"];
+                            goToNextStep(index-1);
+                        })
                     } else if(nStep == 3) {
-                        user[$scope.messagesList[index].property] = data.toUpperCase().split(",");
+                        user[$scope.messages[index].property] = data.toUpperCase().split(",");
                     } else if(nStep == 4){
                         if(data.toLowerCase() == "non" || data.toLowerCase() == "nop" || data.toLowerCase() == "t'es ouf" || data.toLowerCase() == "no" || data.toLowerCase() == "trop pas" || data.toLowerCase() == "jamais" || data.toLowerCase() == "c'est mort" || data.toLowerCase() == "pourquoi faire ?" || data.toLowerCase() == "je m'en fous" || data.toLowerCase() == "pas vraiment" || data.toLowerCase() == "pas vraiment non" || data.toLowerCase() == "je ne pense pas" || data.toLowerCase() == "je m'en bas les couilles frère") {
                             data = null;
@@ -140,7 +165,7 @@ angular.module("bdc").controller("HomeController",
                         } else {
                             $scope.messages[index + 1].questions = ['Super j\'irai voir ça. Je mets l\'adresse de côté : ' + data + ''];
                         }
-                        $scope.messages[index + 1].questions.push("Dernière question & je te laisse tranquille")
+                        $scope.messages[index + 1].questions.push("Dernière question & je te laisse tranquille");
                         $scope.messages[index + 1].questions.push("Est-ce que tu es disponible pour du travail ?")
                     } else if (nStep == 5){
                         if(data.toLowerCase() == "oui" || data.toLowerCase() == "yep" || data.toLowerCase() == "yes" || data.toLowerCase() == "carrément" || data.toLowerCase() == "bien entendu" || data.toLowerCase() == "toujours" || data.toLowerCase() == "bien sûr" || data.toLowerCase() == "bien sur" || data.toLowerCase() == "évidemment" || data.toLowerCase() == "plutôt" || data.toLowerCase() == "plutôt oui" || data.toLowerCase() == "plutot" || data.toLowerCase() == "plutot oui"){
@@ -149,15 +174,16 @@ angular.module("bdc").controller("HomeController",
                             user[$scope.messagesList[index].property] = false;
                         }
                     }
+
+                    if(nStep != 1){
+                        goToNextStep(index)
+                    }
+
+                    if($scope.messages[index + 1] && $scope.messages[index + 1].finalStep){
+                        UsersService.createUser(user)
+                    }
                 });
-                if($scope.messages[index + 1]){
-                    $scope.$apply(function() {
-                        $scope.messagesList.push($scope.messages[index + 1]);
-                    })
-                } else {
-                    console.log("Inscription terminée");
-                    console.log(user)
-                }
+
             };
 
             $scope.launchChat = function(){
