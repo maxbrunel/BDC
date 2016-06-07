@@ -22,7 +22,7 @@ angular.module("bdc").directive("bdcInputFormMessenger",
                 $scope.add = function () {
                     $scope.retryMessage = angular.copy($scope.message);
                     $scope.retryMessage.questions = [];
-                    $scope.retryMessage.questions.push("Oups je n'ai pas compris");
+                    $scope.retryMessage.questions.push("Oups je n'ai pas compris \ud83d\ude31");
                     $scope.retryMessage.questions.push($scope.message.tips);
                     var el = $compile('<bdc-form-messenger message="retryMessage" call-back="onStepValidate"></bdc-form-messenger>')( $scope );
                     $element.parent().parent().parent().append(el);

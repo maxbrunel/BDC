@@ -18,7 +18,7 @@ angular.module("bdc").controller("HomeController",
                     checkStep : function(name){
                         return name.split(" ").length >= 2 && name.length != 0;
                     },
-                    tips : "Essaie plutôt d'écrire ton prénom puis ton nom"
+                    tips : "Essaie plutôt d'écrire ton prénom <strong>puis</strong> ton nom"
                 },
                 {
                     "questions" : [
@@ -47,7 +47,7 @@ angular.module("bdc").controller("HomeController",
                     "questions" : [
                         "Cool ! Du coup, quelles sont tes compétences ?",
                         "Choisis parmis ces compétences en séparant tes choix par des virgules :",
-                        'UI, UX, Motion Design, Typograhie, Illustration, Photographie, Front-end'
+                        '<ul><li>• UI</li><li>• UX</li><li>• Motion Design</li><li>• Typograhie</li><li>• Illustration</li><li>• Photographie</li><li>• Front-end</li></ul>'
                     ],
                     listChoices : ['UI','UX',"Motion Design", "Typograhie","Illustration","Photographie","Front-end"],
                     stepNumber : 3,
@@ -75,7 +75,7 @@ angular.module("bdc").controller("HomeController",
                 },
                 {
                     "questions" : [
-                        "Tu as un lien où je peux voir ce que tu fais ? Tu peux répondre non !"
+                        "\ud83d\ude3b Tu as un lien où je peux voir ce que tu fais ? Tu peux répondre non !"
                     ],
                     stepNumber : 4,
                     placeHolder : "http://",
@@ -85,7 +85,7 @@ angular.module("bdc").controller("HomeController",
                         return (website.slice(0, 7) == "http://" || website.toLowerCase() == "non" || website.toLowerCase() == "nop" || website.toLowerCase() == "no");
 
                     },
-                    tips : "Pense à mettre le http:// ou à répondre non !"
+                    tips : "Pense à mettre le <strong>http://</strong> ou à répondre non !"
                 },
                 {
                     "questions" : [
@@ -104,13 +104,13 @@ angular.module("bdc").controller("HomeController",
                             return false
                         }
                     },
-                    tips : "Il faut répondre par oui ou non enfin !"
+                    tips : "Il faut répondre par oui ou non, c'est si compliqué ? "
                 },
                 {
                     "questions" : [
-                        "Ça marche. Tu devrais bientôt recevoir un e-mail de Slack pour rejoindre la discussion. Tu pourras commencer par te présenter rapidement sur le channel #présentation",
-                        "À bientôt",
-                        "– Max \u2764\uFE0F"
+                        "Ça marche. Tu devrais bientôt recevoir un e-mail de Slack pour rejoindre la discussion. Tu pourras commencer par te présenter rapidement sur le channel <strong>#présentation</strong>",
+                        "À bientôt \ud83d\udc4a",
+                        "– Max"
                     ],
                     stepNumber : 6,
                     finished : false,
@@ -129,9 +129,9 @@ angular.module("bdc").controller("HomeController",
                     $scope.messagesList[index].finished = true;
                     user[$scope.messagesList[index].property] = data;
                     if(nStep == 0){
-                        $scope.messages[index + 1].questions = ["Enchanté " + data.split(" ")[0],"Peux-tu m'envoyer ton adresse e-mail pour que je finalise ton inscription ?"]
+                        $scope.messages[index + 1].questions = ["Enchanté " + data.split(" ")[0] + "&nbsp;\ud83d\udc4b","Peux-tu m'envoyer ton adresse e-mail pour que je finalise ton inscription ?"]
                     } else if (nStep == 1){
-                        $scope.messages[index + 1].questions = ["Merci " + user.name.split(" ")[0] + ". Je t'inscris donc avec l'adresse " + user.email,"À ce propos, où est-ce que tu travailles ?"]
+                        $scope.messages[index + 1].questions = ["Merci " + user.name.split(" ")[0] + " \ud83d\udc8c Je t'inscris donc avec l'adresse " + user.email,"À ce propos, où est-ce que tu travailles ? \ud83c\udfe2"]
                     } else if(nStep == 3) {
                         user[$scope.messagesList[index].property] = data.toUpperCase().split(",");
                     } else if(nStep == 4){
