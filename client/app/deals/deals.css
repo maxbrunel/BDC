@@ -60,3 +60,11 @@
 	font-size: 18px;
 	color: #C0C0C0;
 }
+
+@media (max-width: 768px){
+	.pull-right{float: none !important;}
+	.deals ul{border-right: none;}
+	.deal-logo{margin-left: -50px;}
+	.deal{padding: 0;margin-top: 20px;}
+	.deal-infos{width: 84%; vertical-align: top;}
+}

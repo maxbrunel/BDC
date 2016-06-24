@@ -5,3 +5,5 @@ tmp/
 .idea/
 server/config/config.json
 client/app/app.constant.js
+
+usersDataBase.json
