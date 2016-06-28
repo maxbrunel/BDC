@@ -7,3 +7,5 @@ server/config/config.json
 client/app/app.constant.js
 
 usersDataBase.json
+
+server/config/config.json

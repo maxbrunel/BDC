@@ -12,9 +12,11 @@ angular.module("bdc").controller("DesignersController",
             $scope.workAvailability = false;
             $scope.filterOnWork = function(){
                 if($scope.searchUser.workAvailability){
-                    $scope.searchUser.workAvailability = ""
+                    $scope.searchUser.workAvailability = "";
+                    $scope.workAvailability = false;
                 } else {
-                    $scope.searchUser.workAvailability = true
+                    $scope.searchUser.workAvailability = true;
+                    $scope.workAvailability = true;
                 }
                 console.log($scope.searchUser);
             };
