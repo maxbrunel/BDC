@@ -9,7 +9,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right skills-filters">
 					<li ng-class="{'active' : filteredSkills[$index]}" ng-click="filterOn($index)" ng-repeat="skill in skills">{{skill}}</li>
-					<li><button ng-click="filterOnWork()" class="btn btn-blue" ng-class="{'active':workAvailability}">💼 Disponible</button></li>
+					<li><button ng-click="filterOnWork()" class="btn btn-blue" ng-class="{'active':workAvailability}"><img src="/assets/img/chat-icon.svg" class="icon" alt="Chat"> Disponible</button></li>
 				</ul>
 				<form class="navbar-form">
 					<div class="form-group" style="display:inline;">

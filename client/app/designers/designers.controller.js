@@ -21,7 +21,7 @@ angular.module("bdc").controller("DesignersController",
                 console.log($scope.searchUser);
             };
 
-            $scope.skills = ['UI','UX','Motion-Design', 'Photographie','Illustration','Typographie'];
+            $scope.skills = ['UI','UX','Motion-Design', 'Photographie','Illustration','Typographie', 'Front-end'];
 
             $scope.filterOn = function(index){
                 if(index){
