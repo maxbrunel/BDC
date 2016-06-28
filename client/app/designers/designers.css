@@ -13,7 +13,7 @@
 
 .navbar-designers{
 	background: #fff;
-	height: 68px;
+	height: 0;
 }
 
 .navbar-designers .navbar-collapse, .navbar-designers .navbar-form{
@@ -27,6 +27,13 @@
 	height: 68px;
 	margin: 0;
 	width: 70% !important;
+}
+
+.navbar-designers .skills-filters li:last-of-type{padding: 20px 10px 10px;}
+.navbar-designers .skills-filters li:last-of-type:before{content: none;}
+
+.navbar-designers .skills-filters li .btn{
+	margin-top: -8px;
 }
 
 .navbar-designers input:focus{
@@ -45,25 +52,6 @@
 	cursor: pointer;
 }
 
-.navbar-designers .skills-filters li:before{
-	content: '';
-	height: 2px;
-	width: 0;
-	background: #FFC81A;
-	display: flex;
-	line-height: 28px;
-	margin-left: -10px;
-	bottom: 32px;
-	z-index: -1;
-	position: absolute;
-
-	-webkit-transition: all ease-in-out .2s;
-	-moz-transition: all ease-in-out .2s;
-	-ms-transition: all ease-in-out .2s;
-	-o-transition: all ease-in-out .2s;
-	transition: all ease-in-out .2s;
-}
-
 .navbar-designers .skills-filters li:hover:before{
 	width: 100%;
 }
@@ -71,12 +59,14 @@
 .designers-cards{
 	background: #FAFAFA;
 	padding: 15px 0;
+	border-top: 1px solid #EFEBE4;
 }
 
 .card{
 	background: #fff;
+	border: 1px solid #EFEBE4;
 	margin: 15px 0;
-	padding: 20px;
+	padding: 0px;
 	-webkit-transition: all ease-in-out .2s;
 	-moz-transition: all ease-in-out .2s;
 	-ms-transition: all ease-in-out .2s;
@@ -90,10 +80,18 @@
 	}
 }
 
+.card .availability{
+	background: #EFEBE4;
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
 .card .header{
 	text-align: center;
-	border: 1px solid #FFC81A;
+	border: 1px solid #EFEBE4;
 	height: 65px;
+	margin: 0 20px;
 }
 
 .card .header-infos{
@@ -103,7 +101,7 @@
 .card .hello, .card .work-at{
 	color: #C0C0C0;
 	font-size: 14px;
-	font-weight: 700;
+	font-weight: 300;
 	background: #FFF;
 	padding: 0 10px;
 }
@@ -116,21 +114,70 @@
 
 .card .work-at span{color: #000;}
 
-.card .skills{margin: 25px 0;}
+.card .skills{margin: 15px 20px 0; display: block; text-align: center;}
 .card .skills li{
-	font-size: 18px;
-	margin: 5px 0;
-}
-
-.card .skills li:before{
-	content: '';
-	height: 2px;
-	width: 40px;
-	margin-right: 10px;
+	text-align: center;
+	padding: 5px 10px 2px;
+	border-radius: 99px;
 	background: #FFC81A;
 	display: inline-block;
-	vertical-align: middle;
+	font-size: 12px;
+	letter-spacing: 1px;
+	font-weight: 700;
+	margin: 5px 5px 0;
 }
+
+.card .link{
+	background: url(/assets/img/link-icon.svg) no-repeat center;
+	width: 20px;
+	height: 0px;
+	background-size: 20px;
+	padding: 20px;
+	border-radius: 99px;
+	display: block;
+	text-align: center;
+	margin: 20px auto;
+	border: 2px solid #FFC81A;
+	text-decoration: none;
+	-webkit-transition: all ease-in-out .2s;
+	-moz-transition: all ease-in-out .2s;
+	-ms-transition: all ease-in-out .2s;
+	-o-transition: all ease-in-out .2s;
+	transition: all ease-in-out .2s;
+	overflow: hidden;
+}
+
+.card .link:hover{
+	width: 135px;
+	background-position: 15px;
+	border-radius: 0;
+	background-color: #FFC81A;
+}
+
+.card .link:hover:after{opacity: 1; margin-left: 25px;}
+.card .link:after{
+	content: 'Portfolio';
+	margin-left: 35px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	-webkit-transition: all ease-in-out .2s;
+	-moz-transition: all ease-in-out .2s;
+	-ms-transition: all ease-in-out .2s;
+	-o-transition: all ease-in-out .2s;
+	transition: all ease-in-out .2s;
+/*	-webkit-transition-delay: .2s;
+	-moz-transition-delay: .2s;
+	-ms-transition-delay: .2s;
+	-o-transition-delay: .2s;
+	transition-delay: .2s;	*/
+	display: inline-block;
+	vertical-align: top;
+	line-height: 3px;
+	opacity: 0;
+}
+
 
 .join{
 	background: #FFC81A;
