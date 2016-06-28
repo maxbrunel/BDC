@@ -53,12 +53,13 @@
 
 .dealer{
 	font-size: 24px;
-	font-weight: 700;
 }
 
 .offer{
-	font-size: 18px;
-	color: #C0C0C0;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
 }
 
 @media (max-width: 768px){

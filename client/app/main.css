@@ -8,6 +8,34 @@
 @import "auth/auth.css";
 
 @font-face {
+    font-family: 'Maison Neue';
+    src: url('/assets/fonts/maison-neue-light.otf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maison Neue';
+    src: url('/assets/fonts/maison-neue-light-italic.otf');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Maison Neue';
+    src: url('/assets/fonts/maison-neue-bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maison Neue';
+    src: url('/assets/fonts/maison-neue-bold-italic.otf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
     font-family: 'Apercu Pro';
     src: url('/assets/fonts/apercu_regular_pro.otf');
     font-weight: 300;
@@ -50,7 +78,7 @@
 }
 
 body{
-    font-family: 'Apercu Pro', 'Helvetica Neue',sans-serif;
+    font-family: 'Maison Neue', 'Helvetica Neue',sans-serif;
     -webkit-font-smoothing:antialiased;
     font-smoothing:antialiased;
     text-rendering: OptimizeLegibility;
@@ -135,8 +163,9 @@ h2{
     font-weight: 700;
 }
 
+.highlight-invert{background-color: #000; color: #FFC81A;}
 h2.invert{color: #000;}
-h2 .highlight-invert{background-color: #000; color: #FFC81A;}
+
 
 h2 .highlight{
     background: #FFC81A;

@@ -61,8 +61,20 @@ nav .btn{
 
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand .slack-hello{
 	padding: 27px 20px;
-	font-size: 14px;
+	font-size: 11px;
 	color: #000;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	text-shadow: none;
+}
+
+.navbar-default .navbar-nav>li>a>.btn{
+	font-size: 11px;
+	color: #000;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
 	text-shadow: none;
 }
 
@@ -71,7 +83,6 @@ nav .btn{
 }
 
 .navbar-default .navbar-toggle, .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
-	margin-top: 21px;
 	border: none;
 	background: none;
 }
@@ -178,7 +189,6 @@ nav .btn{
 @media (max-width:767px) {
 	nav{height: 40px;}
 	.navbar-header{height: 50px;}
-	.navbar-default .navbar-toggle, .navbar-default .navbar-toggle:hover{margin: 9px;}
 	.navbar-brand{padding: 7px 9px;}
     .navbar-default, .navbar-collapse{background: #fff;}
     .navbar-brand h1{display: inline-block;}
@@ -242,6 +252,13 @@ footer p.clear{color: #E9EBF0;}
 
 footer ul li{
 	margin-bottom: 10px;
+}
+
+footer ul li a{
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .slack-icon{
