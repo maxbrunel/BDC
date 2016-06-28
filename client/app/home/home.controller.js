@@ -46,15 +46,15 @@ angular.module("bdc").controller("HomeController",
                     "questions" : [
                         "Cool ! Du coup, quelles sont tes compétences ?",
                         "Choisis parmis ces compétences en séparant tes choix par des virgules :",
-                        '<ul><li>• UI</li><li>• UX</li><li>• Motion Design</li><li>• Typograhie</li><li>• Illustration</li><li>• Photographie</li><li>• Front-end</li></ul>'
+                        '<ul><li>• UI</li><li>• UX</li><li>• Motion-Design</li><li>• Typograhie</li><li>• Illustration</li><li>• Photographie</li><li>• Front-end</li></ul>'
                     ],
-                    listChoices : ['UI','UX',"Motion Design", "Typograhie","Illustration","Photographie","Front-end"],
+                    listChoices : ['UI','UX',"Motion-Design", "Typograhie","Illustration","Photographie","Front-end"],
                     stepNumber : 3,
                     placeHolder : "UI, UX, …",
                     finished : false,
                     property : "skills",
                     checkStep : function(skills){
-                        var availableSkills = ['UI','UX',"MOTION DESIGN", "TYPOGRAPHIE","ILLUSTRATION","PHOTOGRAPHIE","FRONT-END"];
+                        var availableSkills = ['UI','UX',"MOTION-DESIGN", "TYPOGRAPHIE","ILLUSTRATION","PHOTOGRAPHIE","FRONT-END"];
                         console.log(availableSkills);
                         var splitedSkills = skills.split(",");
                         var boolean = true;
@@ -180,6 +180,10 @@ angular.module("bdc").controller("HomeController",
                     }
 
                     if($scope.messages[index + 1] && $scope.messages[index + 1].finalStep){
+                        console.log('Lancé dans la base de donney')
+                        if(user.website.slice(0, 7) != "http://"){
+                            user.website = false;
+                        }
                         UsersService.createUser(user)
                     }
                 });

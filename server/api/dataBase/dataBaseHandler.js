@@ -30,7 +30,12 @@ module.exports = {
         if(!user.email || !this.getUser(user.email)){
             return false;
         } else {
-            db.push("/users/" + user.email,user);
+            var userSanitize = user;
+            userSanitize.skills.forEach(function(item){
+                item = item.replace(' ','');
+                item = item.toUpperCase();
+            });
+            db.push("/users/" + user.email,userSanitize);
             return true;
         }
     }
