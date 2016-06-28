@@ -9,28 +9,28 @@
 
 @font-face {
     font-family: 'Maison Neue';
-    src: url('/assets/fonts/maison-neue-light.otf');
+    src: url('/assets/fonts/maison-neue-light.ttf');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Maison Neue';
-    src: url('/assets/fonts/maison-neue-light-italic.otf');
+    src: url('/assets/fonts/maison-neue-light-italic.ttf');
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Maison Neue';
-    src: url('/assets/fonts/maison-neue-bold.otf');
+    src: url('/assets/fonts/maison-neue-bold.ttf');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Maison Neue';
-    src: url('/assets/fonts/maison-neue-bold-italic.otf');
+    src: url('/assets/fonts/maison-neue-bold-italic.ttf');
     font-weight: 700;
     font-style: italic;
 }
