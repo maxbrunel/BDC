@@ -6,6 +6,7 @@
 @import "partners/partners.css";
 @import "designers/designers.css";
 @import "auth/auth.css";
+@import "404/404.css";
 
 @font-face {
     font-family: 'Maison Neue';

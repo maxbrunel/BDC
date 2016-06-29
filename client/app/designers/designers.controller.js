@@ -24,7 +24,7 @@ angular.module("bdc").controller("DesignersController",
             $scope.skills = ['UI','UX','Motion-Design', 'Photographie','Illustration','Typographie', 'Front-end'];
 
             $scope.filterOn = function(index){
-                if(index){
+                if(index || index == 0){
                     $scope.filteredSkills[index] = !$scope.filteredSkills[index];
                 }
                 var filteredSkillsArray = [];

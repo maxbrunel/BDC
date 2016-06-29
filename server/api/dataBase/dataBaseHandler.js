@@ -2,19 +2,17 @@ var config = require('./../../config/config');
 var JsonDB = require('node-json-db');
 
 
-var db = new JsonDB(config.dataBase, true, false);
-
-var getAllUsers = function(){
-    try {
-        return db.getData("/users");
-    } catch (error) {
-        return {}
-    }
-};
+var db = new JsonDB(config.dataBase, true, true);
 
 
 module.exports = {
-    getAllUsers : getAllUsers(),
+    getAllUsers : function(){
+    try {
+        return db.getData("/users");
+    } catch (error){
+        return error;
+    }
+},
     getUser : function(email){
         if(!email){
             return {};

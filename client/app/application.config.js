@@ -35,6 +35,10 @@ angular.module("bdc")
                 templateUrl : "/app/deals/deals.html",
                 url : "/deals"
             })
+            .state('app.404',{
+                templateUrl : "/app/404/404.html",
+                url : "/404"
+            })
             .state('app.auth',{
                 templateUrl : "/app/auth/auth.html",
                 url : "/auth?code",

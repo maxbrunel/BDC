@@ -8,7 +8,7 @@ router.get('/',function(req,res){
 });
 
 router.get('/all',function(req,res){
-    res.send(dataBaseHandler.getAllUsers);
+    res.send(dataBaseHandler.getAllUsers());
 });
 
 router.get('/user',function(req,res){
