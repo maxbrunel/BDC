@@ -115,9 +115,13 @@ img.icon{
 }
 
 .card .availability{
-	background: #EFEBE4;
-	text-align: center;
-	padding: 10px;
+	background: #FFEDB4;
+    text-align: center;
+    padding: 3px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .card .header{
@@ -147,7 +151,7 @@ img.icon{
 
 .card .work-at span{color: #000;}
 
-.card .skills{margin: 15px 20px 15px; display: block; text-align: center;}
+.card .skills{margin: 25px 20px 25px; display: block; text-align: center;}
 .card .skills li{
 	text-align: center;
 	padding: 5px 10px 2px;
