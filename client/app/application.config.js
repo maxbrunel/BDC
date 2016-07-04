@@ -4,6 +4,9 @@ angular.module("bdc")
             enabled: true
         });
     })
+    .config(function($urlRouterProvider){
+        $urlRouterProvider.otherwise('/404');
+    })
     .config(function ($stateProvider) {
         $stateProvider.state("app",{
             templateUrl : "/app/header-footer/header-footer.html",
@@ -68,7 +71,7 @@ angular.module("bdc")
             if(toState.name === 'app.deals' && !$rootScope.context.user.ok){
                 $state.go('app.auth');
             }
-            console.log(toState,$rootScope.context.user.ok);
+            //console.log(toState,$rootScope.context.user.ok);
         });
         $rootScope.context = {
             user : {}

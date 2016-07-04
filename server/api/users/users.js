@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var request = require('request');
 var dataBaseHandler = require('./../dataBase/dataBaseHandler');
+var config = require('../../config/config.json');
+
 
 router.get('/',function(req,res){
     console.log('Users api page');
@@ -24,6 +27,14 @@ router.get('/users',function(req,res){
 
 router.post('/create',function(req,res){
     if(dataBaseHandler.createUser(req.body)){
+        request.post({
+            url: 'https://'+ config.slack.teamUrl + '/api/users.admin.invite',
+            form: {
+                email: req.body.email,
+                token: config.slack.tokenAdmin,
+                set_active: true
+            }
+        }, function(err, httpResponse, body) {});
         res.statusCode = 200;
         res.send();
     } else {

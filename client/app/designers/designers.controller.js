@@ -18,7 +18,7 @@ angular.module("bdc").controller("DesignersController",
                     $scope.searchUser.workAvailability = true;
                     $scope.workAvailability = true;
                 }
-                console.log($scope.searchUser);
+                //console.log($scope.searchUser);
             };
 
             $scope.skills = ['UI','UX','Motion-Design', 'Photographie','Illustration','Typographie', 'Front-end'];
@@ -52,7 +52,7 @@ angular.module("bdc").controller("DesignersController",
                 var localFilteredSkills = angular.copy(filteredSkillsArray);
                 localSkills = localSkills.map(function(x){return x.replace(" ","").toUpperCase()});
                 localFilteredSkills = localFilteredSkills.map(function(x){return x.replace(" ","").toUpperCase()});
-                console.log(localSkills,localFilteredSkills);
+                //console.log(localSkills,localFilteredSkills);
                 localFilteredSkills.forEach(function(filterSkill){
                     if(localSkills.indexOf(filterSkill) < 0){
                         bool = false;
@@ -62,7 +62,7 @@ angular.module("bdc").controller("DesignersController",
                 return bool;
             };
             UsersService.getAll().then(function(response){
-                console.log(response.data);
+                //console.log(response.data);
                 var users = [];
                 for(var user in response.data){
                     users.push(response.data[user]);

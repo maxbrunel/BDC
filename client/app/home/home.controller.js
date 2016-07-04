@@ -55,14 +55,14 @@ angular.module("bdc").controller("HomeController",
                     property : "skills",
                     checkStep : function(skills){
                         var availableSkills = ['UI','UX',"MOTION-DESIGN", "TYPOGRAPHIE","ILLUSTRATION","PHOTOGRAPHIE","FRONT-END"];
-                        console.log(availableSkills);
+                        //console.log(availableSkills);
                         var splitedSkills = skills.split(",");
                         var boolean = true;
                         if(splitedSkills.length < 2){
                             return false;
                         } else {
                             splitedSkills.forEach(function(item){
-                                console.log(item.replace(" ","").toUpperCase());
+                                //console.log(item.replace(" ","").toUpperCase());
                                 if(availableSkills.indexOf(item.replace(" ","").toUpperCase()) < 0){
                                     boolean = false;
                                 }
@@ -129,8 +129,8 @@ angular.module("bdc").controller("HomeController",
                         $scope.messagesList.push($scope.messages[index + 1]);
                     })})
                 } else {
-                    console.log("Inscription terminée");
-                    console.log(user);
+                    //console.log("Inscription terminée");
+                    //console.log(user);
                 }
             };
 
@@ -180,7 +180,7 @@ angular.module("bdc").controller("HomeController",
                     }
 
                     if($scope.messages[index + 1] && $scope.messages[index + 1].finalStep){
-                        console.log('Lancé dans la base de donney')
+                        //console.log('Lancé dans la base de donney')
                         if(user.website.slice(0, 7) != "http://"){
                             user.website = false;
                         }
@@ -193,11 +193,5 @@ angular.module("bdc").controller("HomeController",
             $scope.launchChat = function(){
                 $timeout(function(){$scope.messagesList.push($scope.messages[0]);},500)
             };
-
-
-
-            $scope.testFunc = function(){
-                console.log("OH c'est pas vrai")
-            }
         }]);
 
