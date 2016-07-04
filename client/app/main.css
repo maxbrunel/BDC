@@ -163,6 +163,7 @@ h2{
     color: #000;
     font-weight: 700;
 }
+.highlight-light{background: #FFEDB4;}
 
 .highlight-invert{background-color: #000; color: #FFC81A;}
 h2.invert{color: #000;}

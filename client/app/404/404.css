@@ -29,6 +29,10 @@
 	mix-blend-mode: multiply;
 }
 
+.nav-404 a{
+	color: #FFF !important;
+}
+
 .footer-404{
 	position: absolute;
 	top: 100%;

@@ -29,7 +29,7 @@
 	width: 70% !important;
 }
 
-.navbar-designers .skills-filters li:last-of-type{padding: 20px 10px 10px;}
+.navbar-designers .skills-filters li:last-of-type{padding: 20px 0 10px 10px;}
 .navbar-designers .skills-filters li:last-of-type:before{content: none;}
 
 .navbar-designers .skills-filters li .btn{
@@ -95,6 +95,8 @@ img.icon{
 	padding: 15px 0;
 	border-top: 1px solid #EFEBE4;
 }
+
+.designers-cards .container{padding: 0 !important;}
 
 .card{
 	background: #fff;
@@ -222,3 +224,10 @@ img.icon{
 }
 
 .join a{font-weight: 700;}
+
+
+@media (max-width: 992px){.navbar-designers .navbar-form{display: none;}}
+@media (max-width: 768px){
+	.navbar-designers{display: none;}
+	.designers-cards .masonry-brick{width: 100%;}
+}

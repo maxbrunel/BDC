@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" ng-class="{'nav-404': $state.includes('app.404')}">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -14,7 +14,7 @@
                     <li><a ui-sref="app.partners">Partenaires</a></li>
                     <li><a href="mailto:bordeauxdesignersclub@maxbrunel.com">Support</a></li>
                     <li><a ng-click="theme();" style="cursor: pointer;">Thème</a></li>
-                    <li><a href="http://bordeauxdesignersclub.slack.com"><img src="/assets/img/slack-icon.svg" alt="Slack" class="slack-icon">Connexion</a></li>
+                    <li><a href="http://bordeauxdesignersclub.slack.com"><img src="/assets/img/slack-icon.svg" alt="Slack" class="slack-icon" ng-if="!$state.includes('app.404')"><img src="/assets/img/slack-icon-white.svg" alt="Slack" class="slack-icon" ng-if="$state.includes('app.404')">Connexion</a></li>
                     <li ng-if="!$state.includes('app.home')" class="inscription-btn"><a ui-sref="app.home" style="padding: 27px 0;"><span class="btn btn-blue">Inscription</span></a></li>
                 </ul>
             </div><!--/.nav-collapse -->

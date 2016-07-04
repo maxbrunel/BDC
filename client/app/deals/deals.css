@@ -51,6 +51,8 @@
 	text-overflow: ellipsis;
 }
 
+.deal-infos a:hover{text-decoration: none;}
+
 .dealer{
 	font-size: 24px;
 }
