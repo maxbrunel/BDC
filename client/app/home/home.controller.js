@@ -48,7 +48,7 @@ angular.module("bdc").controller("HomeController",
                         "Choisis parmis ces compétences en séparant tes choix par des virgules :",
                         '<ul><li>• UI</li><li>• UX</li><li>• Motion-Design</li><li>• Typograhie</li><li>• Illustration</li><li>• Photographie</li><li>• Front-end</li></ul>'
                     ],
-                    listChoices : ['UI','UX',"Motion-Design", "Typograhie","Illustration","Photographie","Front-end"],
+                    listChoices : ['UI','UX',"Motion-Design", "Typographie","Illustration","Photographie","Front-end"],
                     stepNumber : 3,
                     placeHolder : "UI, UX, …",
                     finished : false,
