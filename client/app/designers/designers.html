@@ -25,7 +25,7 @@
 	<div class="designers-cards">
 		<div class="container">
 			<div masonry>
-				<div class="masonry-brick col-md-4 col-sm-6" ng-repeat="user in users | orderBy:'name' | filter:searchUser track by user.email">
+				<div class="masonry-brick col-md-4 col-sm-6" ng-repeat="user in users | filter:searchUser track by user.email">
 					<div class="card">
 						<div class="availability" ng-if="user.workAvailability">
 							<span>Je suis disponible !</span>
