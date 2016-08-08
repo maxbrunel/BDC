@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var dataBaseHandler = require('./../dataBase/dataBaseHandler');
+var mongoDataBaseHandler = require('./../dataBase/mongoDataBaseHandler');
 var config = require('../../config/config.json');
 
 
@@ -11,7 +12,14 @@ router.get('/',function(req,res){
 });
 
 router.get('/all',function(req,res){
-    res.send(dataBaseHandler.getAllUsers());
+    mongoDataBaseHandler.getAllUsers().then(
+        function(result){
+            res.send(result)
+        }, function(error){
+            res.status(500).send(error);
+        }
+    );
+    //res.send(dataBaseHandler.getAllUsers());
 });
 
 router.get('/user',function(req,res){

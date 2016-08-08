@@ -7,12 +7,12 @@ var db = new JsonDB(config.dataBase, true, true);
 
 module.exports = {
     getAllUsers : function(){
-    try {
-        return db.getData("/users");
-    } catch (error){
-        return error;
-    }
-},
+        try {
+            return db.getData("/users");
+        } catch (error){
+            return error;
+        }
+    },
     getUser : function(email){
         if(!email){
             return {};

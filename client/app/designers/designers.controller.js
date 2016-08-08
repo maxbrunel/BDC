@@ -79,10 +79,7 @@ angular.module("bdc").controller("DesignersController",
             }
             UsersService.getAll().then(function(response){
                 //console.log(response.data);
-                var users = [];
-                for(var user in response.data){
-                    users.push(response.data[user]);
-                }
+                var users = angular.copy(response.data);
                 users = shuffleArray(users);
                 usersBackup = angular.copy(users);
                 $scope.users = users;
