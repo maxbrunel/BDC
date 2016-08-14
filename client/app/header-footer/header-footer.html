@@ -14,7 +14,7 @@
                     <li><a ui-sref="app.designers">Designers</a></li>
                     <li><a ui-sref="app.partners">Partenaires</a></li>
                     <li><a href="mailto:bordeauxdesignersclub@maxbrunel.com">Support</a></li>
-                    <li><a href="http://bordeauxdesignersclub.slack.com"><img src="/assets/img/slack-icon.svg" alt="Slack" class="slack-icon" ng-if="!$state.includes('app.404')"><img src="/assets/img/slack-icon-white.svg" alt="Slack" class="slack-icon" ng-if="$state.includes('app.404')">Connexion</a></li>
+                    <li><a ui-sref="app.settings.deals">Connexion</a></li>
                     <li ng-if="!$state.includes('app.home')" class="inscription-btn"><a ui-sref="app.home" style="padding: 27px 0;"><span class="btn btn-blue">Inscription</span></a></li>
                 </ul>
             </div><!--/.nav-collapse -->
@@ -40,14 +40,14 @@
             <div class="col-md-2 col-sm-4">
                 <ul>
                     <li><a ui-sref="app.partners">Partenaires</a></li>
-                    <li><a ui-sref="app.deals">Deals</a></li>
+                    <li><a ui-sref="app.deals">Événements</a></li>
                     <li><a ui-sref="app.designers">Designers</a></li>
                 </ul>
             </div>
             <div class="col-md-2 col-sm-4">
                 <ul>
                     <li><a ui-sref="app.home">Inscription</a></li>
-                    <li><a href="http://bordeauxdesignersclub.slack.com"><img src="/assets/img/slack-icon.svg" alt="Slack" class="slack-icon">Connexion</a></li>
+                    <li><a ui-sref="app.settings.deals">Connexion</a></li>
                 </ul>
             </div>
         </div>

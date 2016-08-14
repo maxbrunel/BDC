@@ -15,7 +15,7 @@ angular.module("bdc").controller("AuthController",
                                 //$state.go('BADTEAMPAGE');
                             } else {
                                 //console.log($rootScope.context.user);
-                                $state.go('app.deals');
+                                $state.go('app.settings');
                             }
 
                         } else {

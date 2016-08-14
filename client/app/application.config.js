@@ -33,11 +33,36 @@ angular.module("bdc")
                 templateUrl : "/app/partners/partners.html",
                 url : "/partners"
             })
-
-            .state('app.deals',{
-                templateUrl : "/app/deals/deals.html",
-                url : "/deals"
+            .state('app.settings',{
+                templateUrl : "/app/settings/settings.html",
+                abstract: true,
+                url : "/settings"
             })
+                .state('app.settings.deals',{
+                    templateUrl : "/app/settings/deals/deals.html",
+                    url : "/deals"
+                })
+                .state('app.settings.profile',{
+                    templateUrl : "/app/settings/profile/profile.html",
+                    url : "/profile"
+                })
+                .state('app.settings.events',{
+                    templateUrl : "/app/settings/events/events.html",
+                    abstract: true,
+                    url : "/events"
+                })
+                    .state('app.settings.events.upcoming',{
+                        templateUrl : "/app/settings/events/upcoming/upcoming.html",
+                        url : "/upcoming"
+                    })
+                    .state('app.settings.events.created',{
+                        templateUrl : "/app/settings/events/created/created.html",
+                        url : "/created"
+                    })
+                    .state('app.settings.events.new',{
+                        templateUrl : "/app/settings/events/new/new.html",
+                        url : "/new"
+                    })
             .state('app.404',{
                 templateUrl : "/app/404/404.html",
                 url : "/404"
@@ -68,8 +93,8 @@ angular.module("bdc")
         });
 
         $rootScope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
-            if(toState.name === 'app.deals' && !$rootScope.context.user.ok){
-                $state.go('app.auth');
+            if(toState.name === 'app.settings' && !$rootScope.context.user.ok){
+                // $state.go('app.auth');
             }
             //console.log(toState,$rootScope.context.user.ok);
         });

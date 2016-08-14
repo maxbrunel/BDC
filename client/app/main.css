@@ -1,11 +1,16 @@
 @import "css/button.css";
+@import "css/checkbox.css";
+@import "css/datepicker.css";
 @import "header-footer/header-footer.css";
 @import "home/home.css";
 @import "about/about.css";
-@import "deals/deals.css";
 @import "partners/partners.css";
 @import "designers/designers.css";
 @import "auth/auth.css";
+@import "settings/settings.css";
+@import "settings/deals/deals.css";
+@import "settings/profile/profile.css";
+@import "settings/events/events.css";
 @import "404/404.css";
 
 @font-face {

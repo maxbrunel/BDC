@@ -1,0 +1,83 @@
+<div class="profile">
+	<div class="title clearfix">
+		<div class="user-id">
+		<h2><strong>Rémi Millet</strong></h2> <!-- {{context.user.user.name}} -->
+		<div class="email">remimillet@gmail.com</div>
+		</div>
+		<a><span class="btn btn-blue right">Mettre à jour</span></a>
+	</div>
+
+	<!-- AVALAIBILITY -->
+	<div class="availability profile-section">
+		<div class="checkbox-primary checkbox">
+			<input id="availability" class="styled" type="checkbox">
+			<label for="availability">Disponible pour embauche / Freelance</label>
+		</div>
+	</div>
+
+	<!-- COMPANY -->
+	<div class="company form-group profile-section">
+		<label for="company" class="section-label-title">*Entreprise / Formation</label>
+		<input type="text" class="form-control" id="company" value="Brainify">
+	</div>
+
+	<!-- SKILL -->
+	<div class="skills profile-section">
+		<div class="section-label-title">*Compétences</div>
+		<hr>
+		<div class="checkbox-primary checkbox">
+			<input id="uidesign" class="styled" type="checkbox">
+			<label for="uidesign">UI Design</label>
+		</div>
+		<div class="checkbox-primary checkbox">
+			<input id="uxdesign" class="styled" type="checkbox">
+			<label for="uxdesign">UX Design</label>
+		</div>
+		<div class="checkbox-primary checkbox">
+			<input id="print" class="styled" type="checkbox">
+			<label for="print">Print</label>
+		</div>
+		<div class="checkbox-primary checkbox">
+			<input id="photography" class="styled" type="checkbox">
+			<label for="photography">Photographie</label>
+		</div>
+		<div class="checkbox-primary checkbox">
+			<input id="typography" class="styled" type="checkbox">
+			<label for="typography">Typographie</label>
+		</div>
+		<div class="checkbox-primary checkbox">
+			<input id="motiondesign" class="styled" type="checkbox">
+			<label for="motiondesign">Motion: Design</label>
+		</div>
+		<div class="checkbox-primary checkbox">
+			<input id="productdesign" class="styled" type="checkbox">
+			<label for="productdesign">Product Design</label>
+		</div>
+		<div class="checkbox-primary checkbox">
+			<input id="illustration" class="styled" type="checkbox">
+			<label for="illustration">Illustration</label>
+		</div>
+		<div class="checkbox-primary checkbox">
+			<input id="branding" class="styled" type="checkbox">
+			<label for="branding">Branding</label>
+		</div>
+		<div class="checkbox-primary checkbox">
+			<input id="frontend" class="styled" type="checkbox">
+			<label for="frontend">Développement Front-end</label>
+		</div>
+	</div>
+
+	<!-- PORTFOLIO -->
+	<div class="portfolio form-group profile-section">
+		<label for="portfolio" class="section-label-title">Site web</label>
+		<input type="text" class="form-control" id="portfolio" value="http://twitter.com/remi_millet">
+	</div>
+
+
+	<!-- DELETE -->
+	<div class="delete form-group profile-section">
+		<a ng-click="delete();">
+			<div>Demander la suppression du compte</div>
+			<small>VOTRE ACCÈS À SLACK SERA SUPPRIMÉ</small>
+		</a>
+	</div>

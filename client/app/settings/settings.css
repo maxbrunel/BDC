@@ -1,0 +1,72 @@
+.desktop-menu{display: block;}
+.mobile-menu{display: none;}
+
+button.dropdown-toggle{
+	border: 0;
+	box-shadow: 0;
+	text-shadow: 0;
+	background: #FAFAFA;
+	padding: 15px;
+	border-radius: 6px;
+	margin-bottom: 10px;
+	font-size: 18px;
+	display: block;
+	text-decoration: none;
+	width: 100%;
+	text-align: left;
+}
+
+.settings h1{
+	margin-bottom: 70px;
+}
+
+.settings .title h2{
+	margin: 0;
+    font-size: 3em;
+    color: #000;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.settings .title .btn.right{
+	float: right;
+	clear: both;
+	vertical-align: middle;
+	font-size: 12px;
+	color: #000;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	text-shadow: none;
+}
+
+.settings hr{background-color: #EFEBE4;}
+.settings .menu.col-md-4{padding-left: 0;}
+.settings .menu{border-right: 1px solid #EFEBE4; margin-bottom: 100px;}
+.settings .menu ul{margin: 0; padding: 0;}
+.settings .menu li a{
+	padding: 15px;
+	border-radius: 6px;
+	margin-bottom: 10px;
+	font-size: 18px;
+	display: block;
+	text-decoration: none;
+}
+
+.settings .menu li a .emoji{margin-right: .5em;}
+
+.settings .menu li a:hover, .settings .menu li a:focus, .settings .menu li a.active{background-color: #FAFAFA;}
+
+
+
+@media (max-width: 768px){
+	.desktop-menu{display: none;}
+	.mobile-menu{display: block;}
+	.settings .settings-content{padding-left: 0;}
+	.settings .content{ margin-top: 100px; }
+	.settings h1{font-size: 8vw; margin-top: 0; margin-bottom: 50px;}
+	.settings .menu{border-right: none; padding-right: 0;}
+	.settings .deals .title h2, .settings .profile .user-id{display: block; margin-bottom: 20px !important;}
+	.settings .title h2{font-size: 8vw !important;}
+	.settings .title .btn.right{float: none; margin-bottom: 30px;}
+}

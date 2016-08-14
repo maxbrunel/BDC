@@ -1,0 +1,85 @@
+.time-date > .display > .title {
+    background-color: #EFEBE4;
+    color: #000;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.time-date > .display > .content {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 2.4rem;
+    padding: 2.3rem 0;
+    font-size: 1.5rem;
+    background-color: #FAFAFA;
+    color: #000;
+    font-weight: 700;
+}
+
+.time-date > .display > .content > .super-title {
+    text-transform: uppercase;
+    color: #FFC81A;
+    letter-spacing: 1px;
+}
+
+.time-date > .display > .content > .sub-title {
+	color: #FFC81A;
+}
+
+.time-date > .control > .slider > .date-control > .days .day-cell.today{font-weight: 700; color: #FFC81A;}
+
+.time-date > .control > .slider > .date-control > .days .day-cell:hover, .time-date > .control > .slider > .date-control > .days .day-cell:active {
+    color: #000;
+    background-color: #FFC81A;
+    border-radius: 999px;
+}
+
+.time-date > .control > .slider > .date-control > .days .day-cell.selected {
+    color: #000;
+    background-color: #FFC81A;
+    border-radius: 99px;
+}
+
+
+
+.time-date[theme=bootstrap] > .control > .slider > .date-control > .days > .day-cell.today::after {display: none;}
+
+
+.time-date > .control > .slider > .time-control > .time-inputs > input {
+    border: none;
+     border-bottom: none; 
+    text-align: left;
+    font-size: 24px;
+    line-height: auto !important; 
+    width: 44px;
+    margin: 0; 
+    padding: 10px 0;
+}
+
+.time-date.vertical{
+	padding: 0;
+	margin-left: 15px;
+}
+
+.time-date > .control > .slider > .date-control > .title{
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.time-date > .control > .slider > .date-control > .headers{font-weight: 700; color: #C0C0C0;}
+.time-control, .time-date > .control > .slider > .time-control > .time-inputs{
+	height: 50px;
+	margin: 0;
+	bottom: 0;
+	position: relative;
+}
+.time-control{background-color: #FAFAFA; border: 1px solid #EFEBE4;}
+.time-date > .control > .slider > .date-control, .time-date > .control > .slider > .time-control, .time-date > .control > .slider > .switch-control{height: auto !important;}
+.time-date.vertical.full-mode > .control{height: 240px;}
+
+.time-date.vertical.full-mode > .control > .full-title, .time-date.full-mode > .buttons, .time-date > .control > .slider > .time-control > .time-inputs > .hours.up, .time-date > .control > .slider > .time-control > .time-inputs > .minutes.up{display: none;}

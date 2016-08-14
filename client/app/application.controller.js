@@ -14,5 +14,26 @@ angular.module("bdc").controller("ApplicationController",
                     html : true
                 });
             };
+            $scope.delete = function() {
+                SweetAlert.swal({
+                    title: "Attention !",
+                    text: 'Tu ne seras plus membre du Bordeaux Designers Club',
+                    type: 'warning',
+                    confirmButtonText: "SUPPRIMER",
+                    cancelButtonText: "ANNULER",
+                    confirmButtonColor: '#FFC81A',
+                    closeOnConfirm: false,
+                    showCancelButton: true,
+                    closeOnCancel: true
+                },
+                function(){   
+                    swal({
+                        title: "Supprimé !", 
+                        text: "Ton compte a bien été supprimé", 
+                        type: "success",
+                        confirmButtonColor: '#FFC81A'
+                    });
+                });
+            };
         }]);
 

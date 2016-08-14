@@ -1,0 +1,32 @@
+<div class="settings">
+	<div class="container content">
+		<h1><strong>Bonjour <span class="highlight">Rémi Millet</span>,</strong></h1> <!-- {{context.user.user.name}} -->
+		<div class="col-md-4 menu">
+			<ul class="desktop-menu">
+				<li><a ui-sref="app.settings.deals" ng-class="{'active': $state.includes('app.settings.deals')}">🎁 Profiter des Deals</a></li>
+				<li><a ui-sref="app.settings.events.upcoming" ng-class="{'active': $state.includes('app.settings.events')}">📅 Gérer les évenements</a></li>
+				<li><a ui-sref="app.settings.profile" ng-class="{'active': $state.includes('app.settings.profile')}">⚙ Modifier le profil</a></li>
+				<li><a href="http://bordeauxdesignersclub.slack.com" target="_blank"><img src="/assets/img/slack-icon-color.svg" draggable="false" alt="" class="slack-icon">Accéder à Slack</a></li>
+				<li><hr></li>
+				<li><a>Déconnexion</a></li>
+			</ul>
+			<!-- Single button -->
+			<div class="btn-group mobile-menu">
+				<button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				Action <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a ui-sref="app.settings.deals" ng-class="{'active': $state.includes('app.settings.deals')}">🎁 Profiter des Deals</a></li>
+				<li><a ui-sref="app.settings.events.upcoming" ng-class="{'active': $state.includes('app.settings.events')}">⏰ Gérer les évenements</a></li>
+				<li><a ui-sref="app.settings.profile" ng-class="{'active': $state.includes('app.settings.profile')}">⚙ Modifier le profil</a></li>
+				<li><a href="http://bordeauxdesignersclub.slack.com" target="_blank"><img src="/assets/img/slack-icon-color.svg" draggable="false" alt="" class="slack-icon">Accéder à Slack</a></li>
+				<li><hr></li>
+				<li><a>Déconnexion</a></li>
+			</ul>
+			</div>
+		</div>
+		<div class="col-md-8 settings-content" style="padding-right: 0;">
+			<ui-view></ui-view>
+		</div>
+	</div>
+</div>

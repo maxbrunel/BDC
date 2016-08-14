@@ -1,21 +1,10 @@
-.dfd.content{margin-top: 0;}
-
-.dfd header{
-	background: url(/assets/img/deals-header-bg.jpg) no-repeat, #FFC81A;
-	mix-blend-mode: multiply;
-	background-position: center;
-	background-size: cover;
-	top: 0;
-	padding: 90px 0;
-	margin-bottom: 45px;
-}
+.settings .deals .title h2{margin-bottom: 30px;}
 
 .description{margin-bottom: 45px;}
 
 .deals ul{
 	padding: 0;
 	margin-bottom: 100px;
-	border-right: 1px solid #E9EBF0;
 }
 
 .deal{
@@ -25,7 +14,7 @@
 }
 
 .deal:hover{
-	background: rgba(0,0,0,.03);
+	background: #FAFAFA;
 }
 
 .deal-logo{
@@ -44,6 +33,7 @@
 }
 
 .deal-infos{
+	max-width: calc(100% - 85px);
 	display: inline-block;
 	vertical-align: middle;
 	margin-left: 20px;
@@ -66,8 +56,8 @@
 
 @media (max-width: 768px){
 	.deals ul{border-right: none;}
-	.deal-logo{margin-left: -50px;}
+	.deal-logo{margin-left: -30px;}
 	.deal{padding: 0;margin-top: 20px;}
 	.deal:hover{background: transparent;}
-	.deal-infos{width: 84%; vertical-align: top;}
+	.deal-infos{width: calc(100% - 54px); vertical-align: top;}
 }

@@ -1,0 +1,70 @@
+	<div class="title clearfix"  style="overflow: hidden; text-overflow: ellipsis;">
+		<div class="user-id">
+		<h2>
+			<span ng-show="!titlecounter.length">Nouvel événement</span>
+			<span ng-show="titlecounter.length">{{titlecounter}}</span>
+		</h2>
+		</div>
+	</div>
+
+
+<!-- TITLE -->
+<div class="title form-group profile-section">
+	<label for="title" class="section-label-title">*Titre</label>
+	<span class="character-counter">{{0 + titlecounter.length}} /50</span>
+	<input maxlength="50" ng-trim="false" ng-model="titlecounter" type="text" class="form-control" id="title" placeholder="Design meetup par Rémi Millet 🙌"> <!-- {{context.user.user.name}} -->
+</div>
+
+
+<div class="row">
+<div class="col-md-6">
+
+
+<!-- DESCRIPTION -->
+<div class="description form-group profile-section">
+	<label for="title" class="section-label-title">*Description</label>
+	<span class="character-counter">{{0 + descriptioncounter.length}} /140</span>
+	<textarea maxlength="140" ng-trim="false" ng-model="descriptioncounter" type="text" class="form-control" id="title"></textarea>
+</div>
+
+</div>
+	<time-date-picker class="col-md-6" ng-model="dateValue" theme="bootstrap" autosave="true" display-mode="full" display-twentyfour="true" orientation="true"></time-date-picker>
+
+
+</div>
+</div>
+
+
+
+<!-- PLACE TITLE -->
+<div class="place form-group profile-section col-md-6">
+	<label for="place" class="section-label-title">*Nom du lieu</label>
+	<input type="text" class="form-control" id="place" placeholder="DARWIN 🐵">
+</div>
+
+<!-- ADDRESS -->
+<div class="address form-group profile-section col-md-6">
+	<label for="address" class="section-label-title">*Adresse</label>
+	<input type="text" class="form-control" id="address" placeholder="87 Quai des Queyries, 33000 Bordeaux">
+</div>
+
+<!-- Price -->
+<div class="price form-group profile-section col-md-6">
+	<label for="price" class="section-label-title">*Prix</label>
+	<div class="input-group">
+	  <input type="number" class="form-control" id="price" aria-describedby="basic-addon1" placeholder="10,00">
+	  <span class="input-group-addon" id="basic-addon1">€</span>
+	</div>
+</div>
+
+<!-- Price -->
+<div class="price-info form-group profile-section col-md-6">
+	<label for="price-info" class="section-label-title">Informations sur le prix</label>
+	<span class="character-counter">{{0 + tweetcounter.length}} /140</span>
+	<input maxlength="140" ng-trim="false" ng-model="tweetcounter" type="text" class="form-control" id="price-info" aria-describedby="basic-addon1" placeholder="Prix sur place // 8€ en préventes">
+</div>
+
+
+<div class="submit profile-section">
+	<a><span class="btn btn-blue ba-btn">Créer l'événement</span></a>
+</div>

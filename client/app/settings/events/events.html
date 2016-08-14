@@ -1,0 +1,8 @@
+<div class="events">
+	<ul class="events-menu">
+		<li><a ui-sref="app.settings.events.upcoming" ng-class="{'active': $state.includes('app.settings.events.upcoming')}">À venir</a></li>
+		<li><a ui-sref="app.settings.events.created" ng-class="{'active': $state.includes('app.settings.events.created')}">Mes événements</a></li>
+		<li><a ui-sref="app.settings.events.new" ng-class="{'active': $state.includes('app.settings.events.new')}">Créer un évenement</a></li>
+	</ul>
+	<ui-view></ui-view>
+</div>
