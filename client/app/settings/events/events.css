@@ -1,3 +1,41 @@
+/*EVENT LIST*/
+
+.event-list{margin-bottom: 100px;}
+.event-list li{
+	padding: 15px;
+	margin-bottom: 15px;
+	border-radius: 6px;
+}
+.event-list li:hover{background: #FAFAFA;}
+.event-list li:hover .edit{opacity: 1;}
+.event-list .date{text-align: center; display: inline-block; font-weight: 700; margin-right: 25px; width: 70px;}
+.event-list .date .day{
+	font-size: 48px;
+	display: block;
+	margin: 0;
+	line-height: 1em;
+}
+
+.event-list .date .month{
+	color: #FFC81A;
+	font-size: 12px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.event-list .infos{display: inline-block; vertical-align: center;}
+.event-list .title{font-size: 24px; display: block; margin-bottom: 10px;}
+.event-list .creation-date{color: #C0C0C0;}
+
+.event-list .edit{
+	float: right;
+	padding: 9px 0;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/*MENU*/
+
 .events-menu{margin-bottom: 50px;}
 
 .events-menu li{
@@ -46,3 +84,12 @@
 @media (max-width: 992px){
 	.events .place, .events .address, .events .price-info, .events .price{padding-left: 0; padding-right: 0;}
 }
+
+
+/*EMPTY STATE*/
+.events .empty{text-align: center; margin: 100px 0;}
+.events .empty h2{font-size: 36px; margin-bottom: 30px;}
+.events .empty h3{font-size: 18px; margin-bottom: 30px;}
+
+/*UPCOMING*/
+.upcoming .event-list li{cursor: pointer;}
