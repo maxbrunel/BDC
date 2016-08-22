@@ -4,7 +4,7 @@
 .event-list li{
 	position: relative;
 	padding: 15px;
-	margin: 20px 0;
+	margin: 30px 0;
 	border-radius: 6px;
 	-webkit-transition: all ease-in-out .2s;
 	-moz-transition: all ease-in-out .2s;
@@ -19,7 +19,8 @@
 .event-list .details div:first-of-type{margin-top: 0;}
 .event-list .details div .icon{margin-right: 10px; text-align: center;}
 
-.event-list li.active, .event-list li:hover{background: #FAFAFA;}
+.event-list li:hover{background: #FAFAFA;}
+.event-list li.active .title{font-weight: 700; background: #FFC81A; display: table;}
 
 .event-list .date{text-align: center; display: inline-block; font-weight: 700; margin-right: 25px; width: 70px;}
 .event-list .date .day{
@@ -50,8 +51,20 @@
 	margin-top: 15px;
 }
 
-.event-list .edit{
-	float: right;
+.event-list .edit, .event-list .participate{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fafafa+0,fafafa+100&0+0,1+34 */
+background: -moz-linear-gradient(left,  rgba(250,250,250,0) 0%, rgba(250,250,250,1) 34%, rgba(250,250,250,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(250,250,250,0) 0%,rgba(250,250,250,1) 34%,rgba(250,250,250,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(250,250,250,0) 0%,rgba(250,250,250,1) 34%,rgba(250,250,250,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fafafa', endColorstr='#fafafa',GradientType=1 ); /* IE6-9 */
+	position: absolute;
+	right: 0;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
 	padding: 19px;
 	opacity: 0;
 	cursor: pointer;
@@ -64,12 +77,14 @@
 	text-align: center;
 	/*width: 50px;*/
 }
-.event-list .edit img{width: 30px;}
-.event-list .edit:after{
-	content: 'Modifier';
+.event-list .edit img, .event-list .participate img{width: 30px; position: relative;  vertical-align: middle; display: inline-flex; align-items: middle;}
+.event-list .edit:after{content: 'Modifier';}
+.event-list .participate:after{content: 'Participer';}
+.event-list .edit:after, .event-list .participate:after{
+	height: 0;
 	/*margin-top: 10px;*/
 	text-align: center;
-	margin: 10px auto;
+	margin: 0 auto;
 	font-size: 10px;
 	font-weight: 700;
 	letter-spacing: 1px;
@@ -89,9 +104,9 @@
 	/*line-height: 3px;*/
 	opacity: 0;
 }
-.event-list li:hover .edit{opacity: 1; margin-right: 0;}
-.event-list li .edit:hover{padding: 10px 19px;}
-.event-list li .edit:hover:after{opacity: 1;}
+.event-list li:hover .edit, .event-list li:hover .participate{opacity: 1; margin-right: 0;}
+.event-list li .edit:hover, .event-list li .participate:hover{padding: 10px 19px;}
+.event-list li .edit:hover:after, .event-list li .participate:hover:after{opacity: 1; height: 10px; margin: 10px auto 0;}
 
 .event-list .old{
 	opacity: .5;
@@ -133,7 +148,7 @@
 	transition: all ease-in-out .2s;
 	}
 .events-menu li a:hover, .events-menu li a:focus{color: #000;}
-.events-menu li a.active{color: #000; border-bottom: 1px solid #FFC81A;}
+.events-menu li a.active .title{color: #000; border-bottom: 1px solid #FFC81A;}
 .events .btn{
 	font-size: 12px;
 	color: #000;
@@ -141,6 +156,54 @@
 	letter-spacing: 1px;
 	font-weight: 700;
 	text-shadow: none;
+}
+
+@media (max-width: 992px){
+	.event-list li .edit:after, .event-list li .participate:after{opacity: 1; height: 10px; margin: 10px auto 0;}
+}
+
+@media (max-width: 768px){
+	.event-list li{background: #FAFAFA; border: 1px solid #EFEBE4;}
+	.event-list .date, .event-list .infos, .event-list .details{
+		display: block;
+		min-width: 100%;
+		text-align: left;
+		margin-bottom: 15px;
+	}
+	.event-list .date .day, .event-list .date .month{
+		display: inline-block;
+		font-size: 12px;
+		letter-spacing: 1px;
+		color: #000;
+	}
+	.event-list .date .day{margin-right: .3em;}
+
+	.event-list .edit, .event-list .participate{
+		position: relative;
+		opacity: 1;
+		margin: 0;
+		padding: 0;
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-o-transform: translateY(0);
+		transform: translateY(0);
+		background: #FFC81A;
+		width: 100%;
+		padding: 10px;
+		border-radius: 6px;
+	}
+	.event-list .edit:after, .event-list .participate::after{
+		position: relative;
+		display: inline-block;
+		margin: 0 0 0 15px !important;
+		text-align: center !important;
+	}
+	.event-list .edit img, .event-list .participate img{width: 20px;}
+	.event-list .book{display: inline-flex; text-align: right; float: right; line-height: 24px; margin: 0;}
+	.events-menu li{display: block; margin-bottom: 15px;}
+	.events-menu li a{padding: .5em 0;}
+
 }
 
 /* NEW EVENT */

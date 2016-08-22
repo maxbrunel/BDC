@@ -13,8 +13,11 @@
 			<!-- Single button -->
 			<div class="btn-group mobile-menu">
 				<button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				Action <span class="caret"></span>
-			</button>
+				<span ng-show="$state.includes('app.settings.deals')">🎁 Profiter des Deals</span>
+				<span ng-show="$state.includes('app.settings.events')">📅 Gérer les évenements</span>
+				<span ng-show="$state.includes('app.settings.profile')">⚙ Modifier le profil</span>
+				<span class="caret"></span>
+				</button>
 			<ul class="dropdown-menu">
 				<li><a ui-sref="app.settings.deals" ng-class="{'active': $state.includes('app.settings.deals')}">🎁 Profiter des Deals</a></li>
 				<li><a ui-sref="app.settings.events.upcoming" ng-class="{'active': $state.includes('app.settings.events')}">⏰ Gérer les évenements</a></li>
