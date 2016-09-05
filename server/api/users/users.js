@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
-var dataBaseHandler = require('./../dataBase/dataBaseHandler');
+//var dataBaseHandler = require('./../dataBase/dataBaseHandler');
 var mongoDataBaseHandler = require('./../dataBase/mongoDataBaseHandler');
 var config = require('../../config/config.json');
 
@@ -19,36 +19,40 @@ router.get('/all',function(req,res){
             res.status(500).send(error);
         }
     );
-    //res.send(dataBaseHandler.getAllUsers());
 });
 
 router.get('/user',function(req,res){
-    if(!req.query.email){
-        res.send({})
-    } else {
-        res.send(dataBaseHandler.getUser(req.query.email));
-    }
-});
-router.get('/users',function(req,res){
-    res.send(dataBaseHandler.getAllUsers);
+    mongoDataBaseHandler.getUser(req.query.email).then(
+        function(result){
+            res.send(result)
+        }, function(error) {
+            res.send(error)
+        }
+    )
 });
 
 router.post('/create',function(req,res){
-    if(dataBaseHandler.createUser(req.body)){
-        request.post({
-            url: 'https://'+ config.slack.teamUrl + '/api/users.admin.invite',
-            form: {
-                email: req.body.email,
-                token: config.slack.tokenAdmin,
-                set_active: true
+    mongoDataBaseHandler.createUser(req.body).then(
+        function(success){
+            if(success){
+                request.post({
+                    url: 'https://'+ config.slack.teamUrl + '/api/users.admin.invite',
+                    form: {
+                        email: req.body.email,
+                        token: config.slack.tokenAdmin,
+                        set_active: true
+                    }
+                }, function(err, httpResponse, body) {});
+                res.send(success)
+            } else {
+                res.statusCode = 400;
+                res.send();
             }
-        }, function(err, httpResponse, body) {});
-        res.statusCode = 200;
-        res.send();
-    } else {
-        res.statusCode = 400;
-        res.send();
-    }
+        }, function(error) {
+            res.statusCode = 400;
+            res.send(error)
+        }
+    )
 });
 
 

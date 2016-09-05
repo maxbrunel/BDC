@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/BDC');
 
 mongoose.Promise = global.Promise;
 
@@ -16,20 +16,22 @@ var userSchema = new Schema({
 
 var User = mongoose.model('User',userSchema);
 
-//User.find({},function(err,docs){
-//    console.log(docs);
-//})
-//
-//new User({
-//    email : "remimillet@gmail.com",
-//    name : "Remi Millet",
-//    company: "DoThings",
-//    skills : ["UX","UI"],
-//    website : "",
-//    workAvailability : false
-//}).save(function(err,test){
-//        console.log(err,test)
-//    });
+var checkUser = function(user){
+    if(!user){
+        return false;
+    }
+    if(!user.skills || user.skills.length < 2){
+        return false;
+    }
+    if(!user.email){
+        return false;
+    }
+    if(!user.name){
+        return false;
+    }
+
+    return true;
+};
 
 var userToResult = function(user){
     if(!user){
@@ -95,14 +97,18 @@ module.exports = {
                 if(sucess.email){
                     return false;
                 }
-
-                return User(sanitizeUser(user)).save().then(
-                    function(sucess){
-                        return userToResult(sucess);
-                    }, function(error){
-                        return false;
-                    }
-                )
+                var userToSave = sanitizeUser(user);
+                if(checkUser(userToSave)){
+                    return User(userToSave).save().then(
+                        function(sucess){
+                            return userToResult(sucess);
+                        }, function(error){
+                            return false;
+                        }
+                    )
+                } else {
+                    return false;
+                }
             }, function(error){
                 return false;
             }
