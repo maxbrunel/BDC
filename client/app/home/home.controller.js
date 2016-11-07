@@ -180,10 +180,12 @@ angular.module("bdc").controller("HomeController",
                     }
 
                     if($scope.messages[index + 1] && $scope.messages[index + 1].finalStep){
-                        //console.log('Lancé dans la base de donney')
-                        if(user.website.slice(0, 7) != "http://"){
-                            user.website = false;
+                        if(user.website){
+                            if(user.website.slice(0, 7) != "http://"){
+                                user.website = false;
+                            }
                         }
+
                         UsersService.createUser(user)
                     }
                 });

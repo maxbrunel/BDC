@@ -61,13 +61,27 @@ angular.module("bdc").controller("DesignersController",
                 });
                 return bool;
             };
+            var shuffleArray = function(array) {
+                var m = array.length, t, i;
+
+                // While there remain elements to shuffle
+                while (m) {
+                    // Pick a remaining element…
+                    i = Math.floor(Math.random() * m--);
+
+                    // And swap it with the current element.
+                    t = array[m];
+                    array[m] = array[i];
+                    array[i] = t;
+                }
+
+                return array;
+            }
             UsersService.getAll().then(function(response){
                 //console.log(response.data);
-                var users = [];
-                for(var user in response.data){
-                    users.push(response.data[user]);
-                    usersBackup.push(response.data[user]);
-                }
+                var users = angular.copy(response.data);
+                users = shuffleArray(users);
+                usersBackup = angular.copy(users);
                 $scope.users = users;
             });
 
