@@ -4,6 +4,7 @@ var request = require('request');
 //var dataBaseHandler = require('./../dataBase/dataBaseHandler');
 var mongoDataBaseHandler = require('./../dataBase/mongoDataBaseHandler');
 var config = require('../../config/config.json');
+var userRightChecker = require('../security/user-email-right');
 
 
 router.get('/',function(req,res){
@@ -21,14 +22,45 @@ router.get('/all',function(req,res){
     );
 });
 
-router.get('/user',function(req,res){
-    mongoDataBaseHandler.getUser(req.query.email).then(
+router.get('/user/exists/:email',function(req,res){
+    mongoDataBaseHandler.getUser(req.params.email).then(
         function(result){
-            res.send(result)
+            if(result.email){
+                res.send({exists : true})
+            } else {
+                res.send({exists : false})
+            }
         }, function(error) {
-            res.send(error)
+            res.status(400).send(error)
         }
     )
+});
+
+router.get('/user/:email', userRightChecker, function(req,res){
+    mongoDataBaseHandler.getUser(req.params.email).then(
+        function (result) {
+            if(result.email){
+                res.send(result);
+            } else {
+                res.status(404).send("User does not exist in DB");
+            }
+        },
+        function (err) {
+            res.status(400).send(err)
+        }
+    )
+});
+
+router.post('/user/:email', userRightChecker, function(req,res){
+    //Can't modify his email. Email is check by userRightChecker
+    var user = req.body;
+    user.email = req.params.email;
+
+    mongoDataBaseHandler.updateUser(user).then(function(success){
+        res.send(success)
+    }, function(err){
+        res.status(500).send(err)
+    });
 });
 
 router.post('/create',function(req,res){

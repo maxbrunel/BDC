@@ -11,8 +11,22 @@ angular.module("bdc").service('UsersService',
                 createUser : function(user){
                     return $http.post(rootUrl + '/create',user)
                 },
-                getUserByMail : function(email){
-                    return $http.get(rootUrl + "/user?email=" + email)
+                checkIfEmailExists : function(email){
+                    return $http.get(rootUrl + "/user/exists/" + email)
+                },
+                getUserInfo : function (email) {
+                    return $http.get(rootUrl + "/user/" + email,{
+                        headers :{
+                            Authorization : "Bearer " + $rootScope.context.user.access_token
+                        }
+                    })
+                },
+                updateUserInfo : function (user) {
+                    return $http.post(rootUrl + "/user/" + user.email,user,{
+                        headers :{
+                            Authorization : "Bearer " + $rootScope.context.user.access_token
+                        }
+                    })
                 }
             }
         }]);

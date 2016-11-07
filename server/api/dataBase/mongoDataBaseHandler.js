@@ -113,6 +113,9 @@ module.exports = {
                 return false;
             }
         )
+    },
+    updateUser : function (user) {
+        return User.update({email: user.email}, user)
     }
 };
 

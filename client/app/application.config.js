@@ -44,7 +44,8 @@ angular.module("bdc")
                 })
                 .state('app.settings.profile',{
                     templateUrl : "/app/settings/profile/profile.html",
-                    url : "/profile"
+                    url : "/profile",
+                    controller : 'ProfileController'
                 })
                 .state('app.settings.events',{
                     templateUrl : "/app/settings/events/events.html",
@@ -93,8 +94,8 @@ angular.module("bdc")
         });
 
         $rootScope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams){
-            if(toState.name === 'app.settings' && !$rootScope.context.user.ok){
-                // $state.go('app.auth');
+            if(toState.name.indexOf('app.settings') != -1 && !$rootScope.context.user.ok){
+                $state.go('app.auth');
             }
             //console.log(toState,$rootScope.context.user.ok);
         });

@@ -1,8 +1,8 @@
 "use strict";
 
 angular.module("bdc").controller("HomeController",
-    ["$rootScope","$scope","$timeout",'UsersService',
-        function($rootScope,$scope,$timeout,UsersService){
+    ["$rootScope","$scope","$timeout",'UsersService',"SKILLS",
+        function($rootScope,$scope,$timeout,UsersService,SKILLS){
 
             $scope.messages =[
                 {
@@ -48,13 +48,13 @@ angular.module("bdc").controller("HomeController",
                         "Choisis parmis ces compétences en séparant tes choix par des virgules :",
                         '<ul><li>• UI</li><li>• UX</li><li>• Motion-Design</li><li>• Typograhie</li><li>• Illustration</li><li>• Photographie</li><li>• Front-end</li></ul>'
                     ],
-                    listChoices : ['UI','UX',"Motion-Design", "Typographie","Illustration","Photographie","Front-end"],
+                    listChoices : SKILLS.availableSkills,
                     stepNumber : 3,
                     placeHolder : "UI, UX, …",
                     finished : false,
                     property : "skills",
                     checkStep : function(skills){
-                        var availableSkills = ['UI','UX',"MOTION-DESIGN", "TYPOGRAPHIE","ILLUSTRATION","PHOTOGRAPHIE","FRONT-END"];
+                        var availableSkills = SKILLS.availableSkills;
                         //console.log(availableSkills);
                         var splitedSkills = skills.split(",");
                         var boolean = true;
@@ -144,8 +144,8 @@ angular.module("bdc").controller("HomeController",
                     if(nStep == 0){
                         $scope.messages[index + 1].questions = ["Enchanté " + data.split(" ")[0] + "&nbsp;\ud83d\udc4b","Peux-tu m'envoyer ton adresse e-mail pour que je finalise ton inscription ?"]
                     } else if (nStep == 1){
-                        UsersService.getUserByMail(user.email).then(function(success){
-                            if(success.data.email){
+                        UsersService.checkIfEmailExists(user.email).then(function(success){
+                            if(success.data.exists){
                                 $scope.messages[index].questions = ["Il semble que cette adresse e-mail existe déjà. Essayes avec une autre"];
                                 goToNextStep(index - 1);
                             } else {
