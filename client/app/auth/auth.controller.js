@@ -3,6 +3,7 @@
 angular.module("bdc").controller("AuthController",
     ["$rootScope","$stateParams","$scope",'AuthService','CONFIG','$state',
         function($rootScope,$stateParams,$scope,AuthService,CONFIG,$state){
+            $scope.slackOAuth = CONFIG.slackOAuth;
             if($stateParams.code){
                 //console.log('Code + :' +  $stateParams.code);
                 AuthService.login($stateParams.code).then(
