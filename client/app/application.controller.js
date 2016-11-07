@@ -11,7 +11,8 @@ angular.module("bdc").controller("ApplicationController",
                     text: 'Copie le code suivant et colle le dans le menu "Sidebar Theme" des préférences de Slack <br /><div class="theme-code">#FFC81A,#F6AC08,#F6AC08,#000000,#F6AC08,#333333,#000000,#F26C68</div>',
                     confirmButtonColor: '#FFC81A',
                     type: 'success',
-                    html : true
+                    html : true,
+                    closeOnCancel: true
                 });
             };
             $scope.delete = function() {
@@ -26,10 +27,10 @@ angular.module("bdc").controller("ApplicationController",
                     showCancelButton: true,
                     closeOnCancel: true
                 },
-                function(){   
+                function(){
                     swal({
-                        title: "Supprimé !", 
-                        text: "Ton compte a bien été supprimé", 
+                        title: "Supprimé !",
+                        text: "Ton compte a bien été supprimé",
                         type: "success",
                         confirmButtonColor: '#FFC81A'
                     });
