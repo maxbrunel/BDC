@@ -15,7 +15,7 @@ module.exports = function(req, res, next){
                 res.status(500).send();
             }
             body = JSON.parse(body);
-
+            //TODO : CAREFULL TEAM ID
             if(body.ok && body.team.id == "T0PSA99BN" && body.user.email == req.params.email){
                 next();
             } else {
