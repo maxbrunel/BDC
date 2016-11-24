@@ -1,10 +1,10 @@
 "use strict";
 
 angular.module("bdc").controller("ApplicationController",
-    ["$rootScope","$state","$scope","SweetAlert",
-        function($rootScope,$state,$scope, SweetAlert){
+    ["$rootScope","$state","$scope","SweetAlert","AuthService",
+        function($rootScope,$state,$scope, SweetAlert, AuthService){
             $rootScope.$state = $state;
-            $scope.textToTest =  ["Salut toi", "Hello worfezfjhzifhzuihfzihfzild \u2764"]
+
             $scope.theme = function() {
                 SweetAlert.swal({
                     title: "Custom Slack Theme",
@@ -36,5 +36,11 @@ angular.module("bdc").controller("ApplicationController",
                     });
                 });
             };
+
+
+            $scope.logoutGoHome = function(){
+                $rootScope.$state.go('app.home');
+                AuthService.logout();
+            }
         }]);
 

@@ -13,7 +13,7 @@ angular.module("bdc").service('AuthService',
                     $rootScope.context.user = data;
                 },
                 logout : function(){
-                    $http.post('https://slack.com/api/auth.revoke?token=' + $rootScope.context.user.access_token);
+                    //$http.post('https://slack.com/api/auth.revoke?token=' + $rootScope.context.user.access_token);
                     $rootScope.context.user = {};
                 }
             }

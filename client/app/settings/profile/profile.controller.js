@@ -6,7 +6,7 @@ angular.module("bdc").controller("ProfileController",
     ["$rootScope","$scope",'UsersService',"SKILLS",
         function($rootScope,$scope,UsersService, SKILLS) {
             $scope.availableSkills = SKILLS.availableSkills;
-
+            $scope.isLoading = true;
             UsersService.getUserInfo($rootScope.context.user.user.email).then(function(success){
                 var user = success.data;
                 user.skills.forEach(function(skill){
@@ -16,10 +16,13 @@ angular.module("bdc").controller("ProfileController",
                 $scope.userToSave = user;
             },function (err) {
                 console.log(err)
+            }).finally(function(){
+                $scope.isLoading = false;
             });
 
 
             $scope.save = function(){
+                $scope.isLoading = true;
                 var userToSave = angular.copy($scope.userToSave);
                 userToSave.skills = [];
                 for(var skill in $scope.userToSave.skills){
@@ -33,6 +36,8 @@ angular.module("bdc").controller("ProfileController",
                     },
                     function(err){
                         console.log(err)
+                    }).finally(function(){
+                        $scope.isLoading = false;
                     })
             }
         }

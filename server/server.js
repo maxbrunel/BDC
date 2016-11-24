@@ -16,7 +16,7 @@ app.get('/*', function (req, res) {
 });
 
 
-app.listen(config.node.port || 3000, function () {
+app.listen(config.node.port || 3000,'127.0.0.1', function () {
   console.log('Server is launched on port :' + config.node.port || 3000);
 });
 

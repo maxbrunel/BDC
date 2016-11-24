@@ -1,87 +1,94 @@
 <div class="profile">
-	<div class="title clearfix">
-		<div class="user-id">
-		<h2><strong>{{user.name}}</strong></h2> <!-- {{context.user.user.name}} -->
-		<div class="email">{{user.email}}</div>
-		</div>
-		<a><span class="btn btn-blue right" ng-click="save()">Mettre à jour</span></a>
-	</div>
+    <div style="text-align: center;" ng-if="isLoading">
+        <img src="/assets/img/loading.svg">
+    </div>
 
-	<!-- AVALAIBILITY -->
-	<div class="availability profile-section">
-		<div class="checkbox-primary checkbox">
-			<input id="availability" class="styled" type="checkbox" ng-model="userToSave.workAvailability">
-			<label for="availability">Disponible pour embauche / Freelance</label>
-		</div>
-	</div>
+    <div ng-if="!isLoading">
+        <div class="title clearfix">
+            <div class="user-id">
+                <h2><strong>{{user.name}}</strong></h2> <!-- {{context.user.user.name}} -->
+                <div class="email">{{user.email}}</div>
+            </div>
+            <a><span class="btn btn-blue right" ng-click="save()">Mettre à jour</span></a>
+        </div>
 
-	<!-- COMPANY -->
-	<div class="company form-group profile-section">
-		<label for="company" class="section-label-title">*Entreprise / Formation</label>
-		<input type="text" class="form-control" id="company" ng-model="userToSave.company">
-	</div>
+        <!-- AVALAIBILITY -->
+        <div class="availability profile-section">
+            <div class="checkbox-primary checkbox">
+                <input id="availability" class="styled" type="checkbox" ng-model="userToSave.workAvailability">
+                <label for="availability">Disponible pour embauche / Freelance</label>
+            </div>
+        </div>
 
-	<!-- SKILL -->
-	<div class="skills profile-section">
-		<div class="section-label-title">*Compétences</div>
-		<hr>
-		<div class="checkbox-primary checkbox" ng-repeat="skill in availableSkills">
-			<input id="{{skill}}" class="styled" type="checkbox" ng-model="userToSave.skills[skill]">
-			<label for="{{skill}}">{{skill}}</label>
-		</div>
-		<!--<div class="checkbox-primary checkbox">-->
-			<!--<input id="uxdesign" class="styled" type="checkbox">-->
-			<!--<label for="uxdesign">UX Design</label>-->
-		<!--</div>-->
-		<!--<div class="checkbox-primary checkbox">-->
-			<!--<input id="print" class="styled" type="checkbox">-->
-			<!--<label for="print">Print</label>-->
-		<!--</div>-->
-		<!--<div class="checkbox-primary checkbox">-->
-			<!--<input id="photography" class="styled" type="checkbox">-->
-			<!--<label for="photography">Photographie</label>-->
-		<!--</div>-->
-		<!--<div class="checkbox-primary checkbox">-->
-			<!--<input id="typography" class="styled" type="checkbox">-->
-			<!--<label for="typography">Typographie</label>-->
-		<!--</div>-->
-		<!--<div class="checkbox-primary checkbox">-->
-			<!--<input id="3d" class="styled" type="checkbox">-->
-			<!--<label for="3d">3D</label>-->
-		<!--</div>-->
-		<!--<div class="checkbox-primary checkbox">-->
-			<!--<input id="motiondesign" class="styled" type="checkbox">-->
-			<!--<label for="motiondesign">Motion: Design</label>-->
-		<!--</div>-->
-		<!--<div class="checkbox-primary checkbox">-->
-			<!--<input id="productdesign" class="styled" type="checkbox">-->
-			<!--<label for="productdesign">Product Design</label>-->
-		<!--</div>-->
-		<!--<div class="checkbox-primary checkbox">-->
-			<!--<input id="illustration" class="styled" type="checkbox">-->
-			<!--<label for="illustration">Illustration</label>-->
-		<!--</div>-->
-		<!--<div class="checkbox-primary checkbox">-->
-			<!--<input id="branding" class="styled" type="checkbox">-->
-			<!--<label for="branding">Branding</label>-->
-		<!--</div>-->
-		<!--<div class="checkbox-primary checkbox">-->
-			<!--<input id="frontend" class="styled" type="checkbox">-->
-			<!--<label for="frontend">Développement Front-end</label>-->
-		<!--</div>-->
-	</div>
+        <!-- COMPANY -->
+        <div class="company form-group profile-section">
+            <label for="company" class="section-label-title">*Entreprise / Formation</label>
+            <input type="text" class="form-control" id="company" ng-model="userToSave.company">
+        </div>
 
-	<!-- PORTFOLIO -->
-	<div class="portfolio form-group profile-section">
-		<label for="portfolio" class="section-label-title">Site web</label>
-		<input type="text" class="form-control" id="portfolio" ng-model="userToSave.website">
-	</div>
+        <!-- SKILL -->
+        <div class="skills profile-section">
+            <div class="section-label-title">*Compétences</div>
+            <hr>
+            <div class="checkbox-primary checkbox" ng-repeat="skill in availableSkills">
+                <input id="{{skill}}" class="styled" type="checkbox" ng-model="userToSave.skills[skill]">
+                <label for="{{skill}}">{{skill}}</label>
+            </div>
+            <!--<div class="checkbox-primary checkbox">-->
+            <!--<input id="uxdesign" class="styled" type="checkbox">-->
+            <!--<label for="uxdesign">UX Design</label>-->
+            <!--</div>-->
+            <!--<div class="checkbox-primary checkbox">-->
+            <!--<input id="print" class="styled" type="checkbox">-->
+            <!--<label for="print">Print</label>-->
+            <!--</div>-->
+            <!--<div class="checkbox-primary checkbox">-->
+            <!--<input id="photography" class="styled" type="checkbox">-->
+            <!--<label for="photography">Photographie</label>-->
+            <!--</div>-->
+            <!--<div class="checkbox-primary checkbox">-->
+            <!--<input id="typography" class="styled" type="checkbox">-->
+            <!--<label for="typography">Typographie</label>-->
+            <!--</div>-->
+            <!--<div class="checkbox-primary checkbox">-->
+            <!--<input id="3d" class="styled" type="checkbox">-->
+            <!--<label for="3d">3D</label>-->
+            <!--</div>-->
+            <!--<div class="checkbox-primary checkbox">-->
+            <!--<input id="motiondesign" class="styled" type="checkbox">-->
+            <!--<label for="motiondesign">Motion: Design</label>-->
+            <!--</div>-->
+            <!--<div class="checkbox-primary checkbox">-->
+            <!--<input id="productdesign" class="styled" type="checkbox">-->
+            <!--<label for="productdesign">Product Design</label>-->
+            <!--</div>-->
+            <!--<div class="checkbox-primary checkbox">-->
+            <!--<input id="illustration" class="styled" type="checkbox">-->
+            <!--<label for="illustration">Illustration</label>-->
+            <!--</div>-->
+            <!--<div class="checkbox-primary checkbox">-->
+            <!--<input id="branding" class="styled" type="checkbox">-->
+            <!--<label for="branding">Branding</label>-->
+            <!--</div>-->
+            <!--<div class="checkbox-primary checkbox">-->
+            <!--<input id="frontend" class="styled" type="checkbox">-->
+            <!--<label for="frontend">Développement Front-end</label>-->
+            <!--</div>-->
+        </div>
+
+        <!-- PORTFOLIO -->
+        <div class="portfolio form-group profile-section">
+            <label for="portfolio" class="section-label-title">Site web</label>
+            <input type="text" class="form-control" id="portfolio" ng-model="userToSave.website">
+        </div>
 
 
-	<!-- DELETE -->
-	<div class="delete form-group profile-section">
-		<a ng-click="delete();">
-			<div>Demander la suppression du compte</div>
-			<small>VOTRE ACCÈS À SLACK SERA SUPPRIMÉ</small>
-		</a>
-	</div>
+        <!-- DELETE -->
+        <div class="delete form-group profile-section">
+            <a ng-click="delete();">
+                <div>Demander la suppression du compte</div>
+                <small>VOTRE ACCÈS À SLACK SERA SUPPRIMÉ</small>
+            </a>
+        </div>
+    </div>
+</div>
