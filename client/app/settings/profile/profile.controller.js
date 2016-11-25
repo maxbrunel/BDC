@@ -5,12 +5,35 @@
 angular.module("bdc").controller("ProfileController",
     ["$rootScope","$scope",'UsersService',"SKILLS",
         function($rootScope,$scope,UsersService, SKILLS) {
-            $scope.availableSkills = SKILLS.availableSkills;
+
+            var capitalizeAndLowerCase = function(string){
+                if(string){
+                    return string[0].toUpperCase() + string.slice(1).toLowerCase();
+                }
+                return "";
+            };
+
+            $scope.availableSkills = SKILLS.availableSkills.map(function(skill){
+                if(skill == "UI" || skill == "UX"){
+                    return skill;
+                } else {
+                    return capitalizeAndLowerCase(skill)
+                }
+            });
+
             $scope.isLoading = true;
             UsersService.getUserInfo($rootScope.context.user.user.email).then(function(success){
                 var user = success.data;
+                user.skills = user.skills.map(function(skill){
+                    var newSkill = skill.trim().toUpperCase();
+                    if(newSkill == "UI" || newSkill == "UX"){
+                        return newSkill;
+                    } else {
+                        return capitalizeAndLowerCase(newSkill)
+                    }
+                });
                 user.skills.forEach(function(skill){
-                    user.skills[skill.trim()] = true;
+                    user.skills[skill] = true;
                 });
                 $scope.user = user;
                 $scope.userToSave = user;
