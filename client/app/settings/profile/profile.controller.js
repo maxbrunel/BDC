@@ -14,7 +14,7 @@ angular.module("bdc").controller("ProfileController",
             };
 
             $scope.availableSkills = SKILLS.availableSkills.map(function(skill){
-                if(skill == "UI" || skill == "UX"){
+                if(skill == "UI" || skill == "UX" || skill == "3D"){
                     return skill;
                 } else {
                     return capitalizeAndLowerCase(skill)
@@ -26,7 +26,7 @@ angular.module("bdc").controller("ProfileController",
                 var user = success.data;
                 user.skills = user.skills.map(function(skill){
                     var newSkill = skill.trim().toUpperCase();
-                    if(newSkill == "UI" || newSkill == "UX"){
+                    if(newSkill == "UI" || newSkill == "UX" || newSkill == "3D"){
                         return newSkill;
                     } else {
                         return capitalizeAndLowerCase(newSkill)
