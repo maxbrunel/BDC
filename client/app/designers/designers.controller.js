@@ -28,7 +28,7 @@ angular.module("bdc").controller("DesignersController",
                 return "";
             };
 
-            $scope.skills = SKILLS.map(function(skill){
+            $scope.skills = SKILLS.availableSkills.map(function(skill){
                 if(skill == "UI" || skill == "UX"){
                     return skill;
                 } else {
