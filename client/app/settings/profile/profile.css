@@ -39,7 +39,7 @@
 
 .settings .profile hr{margin: 10px 0 20px;}
 
-.settings .profile .skills .checkbox{width: 49%; display: inline-block;}
+.settings .profile .skills .checkbox{width: 49%; display: inline-block; text-transform: capitalize;}
 
 .settings .profile .delete a{
 	text-decoration: none;
