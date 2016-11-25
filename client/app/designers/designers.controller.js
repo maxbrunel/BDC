@@ -3,8 +3,8 @@
 
 
 angular.module("bdc").controller("DesignersController",
-    ["$rootScope","$scope",'UsersService',
-        function($rootScope,$scope,UsersService){
+    ["$rootScope","$scope",'UsersService','SKILLS',
+        function($rootScope,$scope,UsersService,SKILLS){
             $scope.users = [];
             var usersBackup = [];
             $scope.filteredSkills = [];
@@ -21,8 +21,20 @@ angular.module("bdc").controller("DesignersController",
                 //console.log($scope.searchUser);
             };
 
-            $scope.skills = ['UI','UX','Motion-Design', 'Photographie','Illustration','Typographie', 'Front-end'];
+            var capitalizeAndLowerCase = function(string){
+                if(string){
+                    return string[0].toUpperCase() + string.slice(1).toLowerCase();
+                }
+                return "";
+            };
 
+            $scope.skills = SKILLS.map(function(skill){
+                if(skill == "UI" || skill == "UX"){
+                    return skill;
+                } else {
+                    return capitalizeAndLowerCase(skill)
+                }
+            });
             $scope.filterOn = function(index){
                 if(index || index == 0){
                     $scope.filteredSkills[index] = !$scope.filteredSkills[index];
@@ -76,10 +88,20 @@ angular.module("bdc").controller("DesignersController",
                 }
 
                 return array;
-            }
+            };
             UsersService.getAll().then(function(response){
                 //console.log(response.data);
                 var users = angular.copy(response.data);
+                users = users.map(function(user){
+                    user.skills = user.skills.map(function(skill){
+                        if(skill == "UI" || skill == "UX"){
+                            return skill;
+                        } else {
+                            return capitalizeAndLowerCase(skill)
+                        }
+                    });
+                    return user;
+                });
                 users = shuffleArray(users);
                 usersBackup = angular.copy(users);
                 $scope.users = users;

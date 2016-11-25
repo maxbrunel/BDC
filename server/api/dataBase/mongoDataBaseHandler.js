@@ -115,7 +115,7 @@ module.exports = {
         )
     },
     updateUser : function (user) {
-        return User.update({email: user.email}, user)
+        return User.update({email: user.email}, user,{overwrite: true})
     }
 };
 
