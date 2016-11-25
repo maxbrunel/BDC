@@ -24,7 +24,7 @@
 				<li><a ui-sref="app.settings.profile" ng-class="{'active': $state.includes('app.settings.profile')}">⚙ Modifier le profil</a></li>
 				<li><a href="http://bordeauxdesignersclub.slack.com" target="_blank"><img src="/assets/img/slack-icon-color.svg" draggable="false" alt="" class="slack-icon">Accéder à Slack</a></li>
 				<li><hr></li>
-				<li><a>Déconnexion</a></li>
+				<li><a ng-click="logoutGoHome()">Déconnexion</a></li>
 			</ul>
 			</div>
 		</div>

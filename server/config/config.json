@@ -5,8 +5,8 @@
   "slack" : {
     "url" : "https://slack.com/api",
     "teamUrl" : "bordeauxdesignersclub.slack.com",
-    "clientID" : "23894315396.55118495363",
-    "clientSecret" : "",
+    "clientID" : "23894315396.46152121879",
+    "clientSecret" : "a37b383d072d3a35c69802c6c73b9469",
     "tokenAdmin" : ""
   },
   "dataBase" : "usersDataBase"
