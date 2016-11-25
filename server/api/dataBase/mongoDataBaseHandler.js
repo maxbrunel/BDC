@@ -59,7 +59,7 @@ var sanitizeUser = function(user){
 
     if(user.skills){
         user.skills.map(function(item){
-            return item.replace(' ','').toUpperCase();
+            return item.trim().toUpperCase();
         });
     }
 
@@ -115,7 +115,7 @@ module.exports = {
         )
     },
     updateUser : function (user) {
-        return User.update({email: user.email}, user,{overwrite: true})
+        return User.update({email: user.email}, user)
     }
 };
 
