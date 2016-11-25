@@ -38,7 +38,7 @@ angular.module("bdc").controller("ApplicationController",
             };
 
 
-            $scope.logoutGoHome = function(){
+            $rootScope.logoutGoHome = function(){
                 $rootScope.$state.go('app.home');
                 AuthService.logout();
             }
