@@ -187,12 +187,10 @@ small{
 small a, small a:hover{color: #FFC81A;}
 
 ::selection {
-  background: #FFF;
-  color: #F6AC08;
+  background: #F6AC08;
 }
 ::-moz-selection {
-  background: #FFF;
-  color: #F6AC08;
+  background: #F6AC08;
 }
 
 .capitalize{text-transform: capitalize;}
