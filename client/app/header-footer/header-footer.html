@@ -16,7 +16,7 @@
                     <li><a href="mailto:bordeauxdesignersclub@maxbrunel.com">Support</a></li>
                     <li><a ng-if="!context.user.ok" ui-sref="app.settings.deals">Connexion</a></li>
                     <li><a ng-if="context.user.ok" ui-sref="app.settings.deals">Paramètres</a></li>
-                    <li><a ng-if="context.user.ok" style="cursor:pointer" ng-click="logoutGoHome()">Déconnexion</a></li>
+                    <li><a ng-if="context.user.ok" href="" ng-click="logoutGoHome()">Déconnexion</a></li>
                     <li ng-if="!$state.includes('app.home') && !context.user.ok" class="inscription-btn"><a ui-sref="app.home" style="padding: 27px 0;"><span class="btn btn-blue">Inscription</span></a></li>
                 </ul>
             </div><!--/.nav-collapse -->
