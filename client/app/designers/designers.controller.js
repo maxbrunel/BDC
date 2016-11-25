@@ -94,10 +94,11 @@ angular.module("bdc").controller("DesignersController",
                 var users = angular.copy(response.data);
                 users = users.map(function(user){
                     user.skills = user.skills.map(function(skill){
-                        if(skill == "UI" || skill == "UX"){
-                            return skill;
+                        var newSkill = skill.trim().toUpperCase();
+                        if(newSkill == "UI" || newSkill == "UX"){
+                            return newSkill;
                         } else {
-                            return capitalizeAndLowerCase(skill)
+                            return capitalizeAndLowerCase(newSkill)
                         }
                     });
                     return user;
