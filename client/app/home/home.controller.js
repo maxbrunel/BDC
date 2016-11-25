@@ -4,6 +4,13 @@ angular.module("bdc").controller("HomeController",
     ["$rootScope","$scope","$timeout",'UsersService',"SKILLS",
         function($rootScope,$scope,$timeout,UsersService,SKILLS){
 
+            var capitalizeAndLowerCase = function(string){
+                if(string){
+                    return string[0].toUpperCase() + string.slice(1).toLowerCase();
+                }
+                return "";
+            };
+
             $scope.messages =[
                 {
                     "questions" : [
@@ -46,7 +53,13 @@ angular.module("bdc").controller("HomeController",
                     "questions" : [
                         "Cool ! Du coup, quelles sont tes compétences ?",
                         "Choisis parmis ces compétences en séparant tes choix par des virgules :",
-                        '<ul><li>• UI</li><li>• UX</li><li>• Motion-Design</li><li>• Typograhie</li><li>• Illustration</li><li>• Photographie</li><li>• Front-end</li></ul>'
+                        SKILLS.availableSkills.map(function(skill){
+                            if(skill == "UI" || skill == "UX" || skill == "3D"){
+                                return skill;
+                            } else {
+                                return capitalizeAndLowerCase(skill)
+                            }
+                        }).join(", ")
                     ],
                     listChoices : SKILLS.availableSkills,
                     stepNumber : 3,
@@ -63,7 +76,7 @@ angular.module("bdc").controller("HomeController",
                         } else {
                             splitedSkills.forEach(function(item){
                                 //console.log(item.replace(" ","").toUpperCase());
-                                if(availableSkills.indexOf(item.replace(" ","").toUpperCase()) < 0){
+                                if(availableSkills.indexOf(item.trim().toUpperCase()) < 0){
                                     boolean = false;
                                 }
                             })
