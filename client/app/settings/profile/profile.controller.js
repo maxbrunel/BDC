@@ -36,7 +36,7 @@ angular.module("bdc").controller("ProfileController",
                 var userToSave = angular.copy($scope.userToSave);
                 userToSave.skills = [];
                 for(var skill in $scope.userToSave.skills){
-                    if($scope.userToSave.skills[skill] && !parseInt(skill) && skill != "0"){ //FUCK THIS
+                    if($scope.userToSave.skills[skill] && (!parseInt(skill) || skill == "3D") && skill != "0"){ //FUCK THIS
                         userToSave.skills.push(skill)
                     }
                 }
