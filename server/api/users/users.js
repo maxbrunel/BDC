@@ -7,6 +7,16 @@ var config = require('../../config/config.json');
 var userRightChecker = require('../security/user-email-right');
 
 
+var removeEmailsFromResult = function(users){
+    if(Array.isArray(users)){
+        return users.map(function(user){
+            delete user.email;
+        })
+    } else {
+        return [];
+    }
+};
+
 router.get('/',function(req,res){
     console.log('Users api page');
     res.send('Users api page');
@@ -15,7 +25,7 @@ router.get('/',function(req,res){
 router.get('/all',function(req,res){
     mongoDataBaseHandler.getAllUsers().then(
         function(result){
-            res.send(result)
+            res.send(removeEmailsFromResult(result))
         }, function(error){
             res.status(500).send(error);
         }
