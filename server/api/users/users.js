@@ -10,7 +10,9 @@ var userRightChecker = require('../security/user-email-right');
 var removeEmailsFromResult = function(users){
     if(Array.isArray(users)){
         return users.map(function(user){
-            delete user.email;
+            var userToReturn = user;
+            delete userToReturn.email;
+            return userToReturn;
         })
     } else {
         return [];
