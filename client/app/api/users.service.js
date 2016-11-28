@@ -1,14 +1,15 @@
 "use strict";
 
 angular.module("bdc").service('UsersService',
-    ['$rootScope','$http',
-        function($rootScope,$http){
+    ['$rootScope','$http',"SkillService",
+        function($rootScope,$http,SkillService){
             var rootUrl = "/api/users";
             return {
                 getAll : function(){
                     return $http.get(rootUrl + '/all')
                 },
                 createUser : function(user){
+                    user.skills = SkillService.sanitizeSkills(user.skills);
                     return $http.post(rootUrl + '/create',user)
                 },
                 checkIfEmailExists : function(email){
@@ -22,6 +23,7 @@ angular.module("bdc").service('UsersService',
                     })
                 },
                 updateUserInfo : function (user) {
+                    user.skills = SkillService.sanitizeSkills(user.skills);
                     return $http.post(rootUrl + "/user/" + user.email,user,{
                         headers :{
                             Authorization : "Bearer " + $rootScope.context.user.access_token

@@ -3,8 +3,8 @@
 
 
 angular.module("bdc").controller("DesignersController",
-    ["$rootScope","$scope",'UsersService','SKILLS',
-        function($rootScope,$scope,UsersService,SKILLS){
+    ["$rootScope","$scope",'UsersService',"SkillService",
+        function($rootScope,$scope,UsersService,SkillService){
             $scope.users = [];
             var usersBackup = [];
             $scope.filteredSkills = [];
@@ -21,20 +21,8 @@ angular.module("bdc").controller("DesignersController",
                 //console.log($scope.searchUser);
             };
 
-            var capitalizeAndLowerCase = function(string){
-                if(string){
-                    return string[0].toUpperCase() + string.slice(1).toLowerCase();
-                }
-                return "";
-            };
 
-            $scope.skills = SKILLS.availableSkills.map(function(skill){
-                if(skill == "UI" || skill == "UX" || skill == "3D"){
-                    return skill;
-                } else {
-                    return capitalizeAndLowerCase(skill)
-                }
-            });
+            $scope.skills = SkillService.getDisplayedSkills();
             $scope.filterOn = function(index){
                 if(index || index == 0){
                     $scope.filteredSkills[index] = !$scope.filteredSkills[index];
@@ -50,7 +38,7 @@ angular.module("bdc").controller("DesignersController",
                 } else {
                     var users = [];
                     usersBackup.forEach(function(user){
-                        if(checkSkills(user.skills,filteredSkillsArray)){
+                        if(SkillService.isUserHaveSkills(filteredSkillsArray, user)){
                             users.push(user)
                         }
                     });
@@ -58,21 +46,7 @@ angular.module("bdc").controller("DesignersController",
                 }
                 //console.log($scope.users)
             };
-            var checkSkills = function(skills,filteredSkillsArray){
-                var bool = true;
-                var localSkills = angular.copy(skills);
-                var localFilteredSkills = angular.copy(filteredSkillsArray);
-                localSkills = localSkills.map(function(x){return x.replace(" ","").toUpperCase()});
-                localFilteredSkills = localFilteredSkills.map(function(x){return x.replace(" ","").toUpperCase()});
-                //console.log(localSkills,localFilteredSkills);
-                localFilteredSkills.forEach(function(filterSkill){
-                    if(localSkills.indexOf(filterSkill) < 0){
-                        bool = false;
-                    }
-                    //console.log(filterSkill,bool)
-                });
-                return bool;
-            };
+
             var shuffleArray = function(array) {
                 var m = array.length, t, i;
 
@@ -93,14 +67,7 @@ angular.module("bdc").controller("DesignersController",
                 //console.log(response.data);
                 var users = angular.copy(response.data);
                 users = users.map(function(user){
-                    user.skills = user.skills.map(function(skill){
-                        var newSkill = skill.trim().toUpperCase();
-                        if(newSkill == "UI" || newSkill == "UX" || skill == "3D"){
-                            return newSkill;
-                        } else {
-                            return capitalizeAndLowerCase(newSkill)
-                        }
-                    });
+                    user.skills = SkillService.sanitizeSkills(user.skills);
                     return user;
                 });
                 users = shuffleArray(users);

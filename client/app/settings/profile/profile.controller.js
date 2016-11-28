@@ -3,8 +3,8 @@
 
 
 angular.module("bdc").controller("ProfileController",
-    ["$rootScope","$scope",'UsersService',"SKILLS",
-        function($rootScope,$scope,UsersService, SKILLS) {
+    ["$rootScope","$scope",'UsersService',"SkillService",
+        function($rootScope,$scope,UsersService,SkillService) {
 
             var capitalizeAndLowerCase = function(string){
                 if(string){
@@ -13,25 +13,12 @@ angular.module("bdc").controller("ProfileController",
                 return "";
             };
 
-            $scope.availableSkills = SKILLS.availableSkills.map(function(skill){
-                if(skill == "UI" || skill == "UX" || skill == "3D"){
-                    return skill;
-                } else {
-                    return capitalizeAndLowerCase(skill)
-                }
-            });
+            $scope.availableSkills = SkillService.getDisplayedSkills();
 
             $scope.isLoading = true;
             UsersService.getUserInfo($rootScope.context.user.user.email).then(function(success){
                 var user = success.data;
-                user.skills = user.skills.map(function(skill){
-                    var newSkill = skill.trim().toUpperCase();
-                    if(newSkill == "UI" || newSkill == "UX" || newSkill == "3D"){
-                        return newSkill;
-                    } else {
-                        return capitalizeAndLowerCase(newSkill)
-                    }
-                });
+                user.skills = SkillService.sanitizeSkills(user.skills);
                 user.skills.forEach(function(skill){
                     user.skills[skill] = true;
                 });

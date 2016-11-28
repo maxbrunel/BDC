@@ -1,15 +1,8 @@
 "use strict";
 
 angular.module("bdc").controller("HomeController",
-    ["$rootScope","$scope","$timeout",'UsersService',"SKILLS",
-        function($rootScope,$scope,$timeout,UsersService,SKILLS){
-
-            var capitalizeAndLowerCase = function(string){
-                if(string){
-                    return string[0].toUpperCase() + string.slice(1).toLowerCase();
-                }
-                return "";
-            };
+    ["$rootScope","$scope","$timeout",'UsersService',"SkillService",
+        function($rootScope,$scope,$timeout,UsersService,SkillService){
 
             $scope.messages =[
                 {
@@ -53,35 +46,16 @@ angular.module("bdc").controller("HomeController",
                     "questions" : [
                         "Cool ! Du coup, quelles sont tes compétences ?",
                         "Choisis parmis ces compétences en séparant tes choix par des virgules :",
-                        SKILLS.availableSkills.map(function(skill){
-                            if(skill == "UI" || skill == "UX" || skill == "3D"){
-                                return skill;
-                            } else {
-                                return capitalizeAndLowerCase(skill)
-                            }
-                        }).join(", ")
+                        SkillService.getDisplayedSkills().join(", ")
                     ],
-                    listChoices : SKILLS.availableSkills,
+                    listChoices : SkillService.getDisplayedSkills(),
                     stepNumber : 3,
                     placeHolder : "UI, UX, …",
                     finished : false,
                     property : "skills",
                     checkStep : function(skills){
-                        var availableSkills = SKILLS.availableSkills;
-                        //console.log(availableSkills);
                         var splitedSkills = skills.split(",");
-                        var boolean = true;
-                        if(splitedSkills.length < 2){
-                            return false;
-                        } else {
-                            splitedSkills.forEach(function(item){
-                                //console.log(item.replace(" ","").toUpperCase());
-                                if(availableSkills.indexOf(item.trim().toUpperCase()) < 0){
-                                    boolean = false;
-                                }
-                            })
-                        }
-                        return boolean;
+                        return SkillService.checkSkillsBeforeSave(splitedSkills);
                     },
                     tips : "Choisis au moins 2 compétences & sépare tout ça avec des virgules."
                 },
