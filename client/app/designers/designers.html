@@ -40,7 +40,7 @@
 						<ul class="skills">
 							<li ng-repeat="skill in user.skills">{{skill}}</li>
 						</ul>
-						<a ng-if="user.website" href="{{user.website}}" target="_blank" class="link">
+						<a ng-if="user.website && user.website != 'false'" href="{{user.website}}" target="_blank" class="link">
 						</a>
 					</div>
 				</div>
