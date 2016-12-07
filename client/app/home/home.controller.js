@@ -68,7 +68,7 @@ angular.module("bdc").controller("HomeController",
                     finished : false,
                     property : "website",
                     checkStep : function(website){
-                        return (website.slice(0, 7) == "http://" || website.toLowerCase() == "non" || website.toLowerCase() == "nop" || website.toLowerCase() == "no");
+                        return (website.slice(0, 8) == "https://" || website.slice(0, 7) == "http://" || website.toLowerCase() == "non" || website.toLowerCase() == "nop" || website.toLowerCase() == "no");
 
                     },
                     tips : "Pense à mettre le <strong>http://</strong> ou à répondre non !"
